@@ -1,0 +1,2731 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pierre's Bookkeeping Services, LLC | Accounting, Tax & Payroll Specialists</title>
+  <meta name="description" content="Professional bookkeeping, accounting, tax preparation, and payroll services in Orlando, FL, New York, NY, and New Haven, CT. Founded by Felicia Pierre.">
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans for refined editorial prestige -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0A192F',       // Deep executive midnight
+              slate: '#1E293B',      // Refined slate
+              gold: '#C5A880',       // Champagne gold accent from classic accounting marks
+              goldHover: '#B39364',
+              cream: '#F8FAFC',      // Soft clean editorial background
+              accent: '#0284C7',     // Precision analytical blue
+              surface: '#FFFFFF',
+              border: '#E2E8F0'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom refined styling */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAFC;
+      color: #1E293B;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Subtle grain & bespoke gradients */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0A192F 0%, #112240 60%, #0c1b33 100%);
+    }
+
+    .editorial-border {
+      border-color: rgba(197, 168, 128, 0.25);
+    }
+
+    .badge-verification {
+      background: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FCD34D;
+    }
+
+    /* Smooth page fade transition */
+    .page-section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .page-section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      background-color: rgba(10, 25, 47, 0.78);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen selection:bg-brand-gold selection:text-brand-navy">
+
+  <!-- TOP DISCLOSURE & PRE-FLIGHT VERIFICATION NOTICE BAR -->
+  <div class="bg-brand-navy text-gray-300 text-xs py-2 px-4 border-b border-white/10 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1.5 text-brand-gold">
+          <i class="fa-solid fa-building text-xs"></i> Main Office: 20 N. Orange Ave, Suite 1100, Orlando, FL 32801
+        </span>
+        <span class="text-white/30">|</span>
+        <span class="inline-flex items-center gap-1.5 text-gray-300">
+          <i class="fa-solid fa-clock text-xs text-brand-gold"></i> Mon–Fri: 9:00 AM – 5:00 PM (By Appointment Only)
+        </span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="tel:2038897272" class="hover:text-brand-gold transition-colors inline-flex items-center gap-1.5 font-medium">
+          <i class="fa-solid fa-phone text-brand-gold text-xs"></i> 203-889-7272
+        </a>
+        <a href="mailto:felicia@pierresbookkeeping.com" class="hover:text-brand-gold transition-colors inline-flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope text-brand-gold text-xs"></i> felicia@pierresbookkeeping.com
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY SITE HEADER -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-all duration-200 shadow-sm">
+    <div class="max-w-[1720px] mx-auto px-3 sm:px-4 lg:px-6 h-20 flex items-center justify-between gap-2 xl:gap-4">
+      
+      <!-- LOGO & BRAND NAME: Compact, zero-wrap single-line container -->
+      <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-2 xl:gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded py-1">
+        <img 
+          src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/302105896_496864902442421_4562787021728387486_n.png" 
+          alt="Pierre's Bookkeeping Services, LLC Logo" 
+          class="h-10 xl:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+          loading="eager"
+        >
+        <div class="flex flex-col text-left leading-none">
+          <span class="font-serif font-bold text-base xl:text-lg tracking-wide text-brand-navy whitespace-nowrap">PIERRE'S</span>
+          <span class="text-[9px] xl:text-[10px] tracking-[0.16em] font-semibold text-gray-500 uppercase whitespace-nowrap">Bookkeeping Services</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAVIGATION: Ultra-clean single-line layout without wrapping or overlapping -->
+      <nav class="hidden lg:flex items-center space-x-1.5 xl:space-x-3 text-xs xl:text-[13px] font-medium text-gray-700 whitespace-nowrap" aria-label="Main Navigation">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="nav-link text-brand-navy border-b-2 border-brand-gold py-1 px-1 font-semibold" data-target="home">Home</a>
+        <a href="#whats-new" onclick="navigateTo('whats-new'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1 inline-flex items-center gap-1" data-target="whats-new">
+          <span>What's New!</span>
+          <span class="px-1 py-0.2 text-[9px] font-bold bg-amber-100 text-amber-800 rounded-full leading-tight">New</span>
+        </a>
+        <a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="practice-areas">Practice Areas (Tax)</a>
+        <a href="#services" onclick="navigateTo('services'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="services">Services</a>
+        <a href="#publications" onclick="navigateTo('publications'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="publications">Publications</a>
+        <a href="#about" onclick="navigateTo('about'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="about">About</a>
+        <a href="#contact" onclick="navigateTo('contact'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="contact">Contact & Offices</a>
+      </nav>
+
+      <!-- APPOINTMENT ACTION CTA & PHONE: Aligned strictly on the same single line -->
+      <div class="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 whitespace-nowrap">
+        <a href="tel:2038897272" class="text-xs xl:text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors inline-flex items-center gap-1.5 px-2 py-1.5 rounded hover:bg-gray-50">
+          <i class="fa-solid fa-phone text-[11px] text-brand-gold"></i>
+          <span>203-889-7272</span>
+        </a>
+        <button onclick="openAppointmentModal()" class="px-3 xl:px-4 py-2 bg-brand-navy text-white text-xs xl:text-[13px] font-semibold rounded hover:bg-brand-slate transition-all shadow-sm hover:shadow border border-brand-navy hover:border-brand-gold inline-flex items-center gap-1.5 shrink-0">
+          <i class="fa-regular fa-calendar-check text-[11px] text-brand-gold"></i>
+          <span>Schedule an Appointment</span>
+        </button>
+      </div>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-md text-gray-600 hover:text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0" aria-label="Toggle Navigation Menu">
+        <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- MOBILE NAVIGATION FLYOUT -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-3">
+      <a href="#home" onclick="navigateTo('home'); toggleMobileMenu(); return false;" class="block py-2 text-base font-semibold text-brand-navy border-l-4 border-brand-gold pl-3">Home</a>
+      <a href="#whats-new" onclick="navigateTo('whats-new'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">What's New! (New Office)</a>
+      <a href="#practice-areas" onclick="navigateTo('practice-areas'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Practice Areas (Tax Filing Services)</a>
+      <a href="#services" onclick="navigateTo('services'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Services</a>
+      <a href="#publications" onclick="navigateTo('publications'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Publications & Tax News</a>
+      <a href="#about" onclick="navigateTo('about'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">About Felicia Pierre</a>
+      <a href="#contact" onclick="navigateTo('contact'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Contact & Offices</a>
+      <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
+        <a href="tel:2038897272" class="w-full py-2.5 px-4 bg-gray-100 text-brand-navy font-semibold text-center rounded flex items-center justify-center gap-2">
+          <i class="fa-solid fa-phone text-brand-gold"></i> Call 203-889-7272
+        </a>
+        <button onclick="openAppointmentModal(); toggleMobileMenu();" class="w-full py-2.5 px-4 bg-brand-navy text-white font-semibold text-center rounded">
+          Schedule an Appointment
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN DYNAMIC CONTENT CONTAINER -->
+  <main class="flex-grow">
+
+    <!-- ========================================== -->
+    <!-- 1. HOMEPAGE VIEW                           -->
+    <!-- ========================================== -->
+    <div id="page-home" class="page-section active">
+      
+      <!-- HERO SECTION -->
+      <section class="relative bg-brand-navy text-white py-16 lg:py-24 overflow-hidden">
+        <!-- Abstract financial grid watermark -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            <div class="lg:col-span-7 space-y-6 text-left">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-brand-gold text-xs font-semibold tracking-wider uppercase border border-brand-gold/30">
+                <i class="fa-solid fa-shield-halved text-xs"></i> Established 2015 · Orlando, FL & Regional Markets
+              </div>
+              <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                Clarity in Your Numbers.<br>
+                <span class="text-brand-gold italic">Confidence</span> in Your Business.
+              </h1>
+              <p class="text-gray-300 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+                Professional bookkeeping, accounting, payroll, and tax preparation services designed to help individuals and businesses stay organized, informed, and financially prepared.
+              </p>
+              
+              <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <button onclick="openAppointmentModal()" class="px-7 py-3.5 bg-brand-gold text-brand-navy font-bold rounded hover:bg-brand-goldHover transition-colors shadow-lg flex items-center justify-center gap-2">
+                  <i class="fa-regular fa-calendar-check"></i>
+                  <span>Schedule an Appointment</span>
+                </button>
+                <a href="tel:2038897272" class="px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-medium rounded border border-white/20 transition-colors flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-phone text-brand-gold"></i>
+                  <span>Call 203-889-7272</span>
+                </a>
+              </div>
+
+              <!-- Quick Assurance Markers -->
+              <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-xs text-gray-300 font-medium">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-gold"></i>
+                  <span>Appointments Mon–Fri</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-gold"></i>
+                  <span>Direct Principal Attention</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-brand-gold"></i>
+                  <span>Secure Financial Handling</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Authentic Office Gallery Showcase (Real Photos) -->
+            <div class="lg:col-span-5">
+              <div class="relative">
+                <div class="relative rounded-lg overflow-hidden shadow-2xl border-2 border-white/10 bg-slate-900 group">
+                  <img 
+                    id="heroOfficeImage"
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg" 
+                    alt="Pierre's Bookkeeping Services Orlando Office Suite" 
+                    class="w-full h-80 sm:h-96 object-cover object-center transition-all duration-500"
+                  >
+                  <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-brand-navy via-brand-navy/80 to-transparent">
+                    <p class="text-xs text-brand-gold uppercase tracking-wider font-semibold">Executive Workspace</p>
+                    <p class="text-white text-sm font-medium">Orange Center Offices · Suite 1100, Orlando, FL</p>
+                  </div>
+                </div>
+
+                <!-- Office Gallery Selector Thumbs -->
+                <div class="mt-3 grid grid-cols-4 gap-2">
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg')" class="rounded overflow-hidden border-2 border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg" alt="Office desk setup" class="h-14 w-full object-cover">
+                  </button>
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469053146_1090186642511505_6837190653210006501_n.jpg')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469053146_1090186642511505_6837190653210006501_n.jpg" alt="Client consultation desk" class="h-14 w-full object-cover">
+                  </button>
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469085795_1090186715844831_4958646103603086772_n.jpg')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469085795_1090186715844831_4958646103603086772_n.jpg" alt="Accounting workstation and records" class="h-14 w-full object-cover">
+                  </button>
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg" alt="Office corridor suite" class="h-14 w-full object-cover">
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- REGIONAL SERVICE COVERAGE MARKETS SECTION -->
+      <section class="bg-gradient-to-r from-slate-50 via-gray-100 to-slate-50 border-b border-gray-200 py-8 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+            
+            <div class="text-center lg:text-left max-w-xl">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-gray-300 text-[11px] font-bold tracking-wider text-brand-navy uppercase mb-1.5 shadow-2xs">
+                <i class="fa-solid fa-map-location-dot text-brand-gold"></i> Service Coverage Markets
+              </div>
+              <h2 class="text-base sm:text-lg font-serif font-bold text-brand-navy">
+                Dedicated Financial & Tax Support Across Three Core Markets
+              </h2>
+              <p class="text-xs text-gray-600 mt-1">
+                Delivering tailored bookkeeping, payroll, and multi-state tax solutions. Office visits are scheduled by appointment at our Orlando locations, with comprehensive remote service across all coverage regions.
+              </p>
+            </div>
+
+            <!-- Verified Markets Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full lg:w-auto">
+              
+              <!-- Market 1: Orlando, FL -->
+              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-building"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-bold text-brand-navy block leading-tight">Orlando, FL, US</span>
+                  <span class="text-[10px] text-brand-gold font-semibold uppercase tracking-wider">Main HQ & Millenia Mall</span>
+                </div>
+              </div>
+
+              <!-- Market 2: New York, NY -->
+              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-gray-100 text-brand-navy flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-bold text-brand-navy block leading-tight">New York, NY, US</span>
+                  <span class="text-[10px] text-gray-500 font-medium">Service Coverage Area</span>
+                </div>
+              </div>
+
+              <!-- Market 3: New Haven, CT -->
+              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-gray-100 text-brand-navy flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-location-dot text-brand-gold"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-bold text-brand-navy block leading-tight">New Haven, CT, US</span>
+                  <span class="text-[10px] text-gray-500 font-medium">Service Coverage Area</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CORE SERVICES SECTION (Asymmetrical, distinct editorial presentations) -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div class="max-w-2xl">
+              <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Professional Capabilities</span>
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-navy mt-1">Core Financial Solutions</h2>
+              <p class="text-gray-600 mt-3 text-base">
+                From daily transaction reconciliation to year-end tax preparation and strategic reporting, we ensure every entry reflects the true health of your operations.
+              </p>
+            </div>
+            <div>
+              <a href="#services" onclick="navigateTo('services'); return false;" class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b-2 border-brand-navy hover:border-brand-gold">
+                <span>View Full Service Catalog</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Asymmetrical Service Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Service 1: Bookkeeping & Accounting (Dominant feature layout with Image 1 background) -->
+            <div class="relative overflow-hidden lg:col-span-7 rounded-2xl p-8 sm:p-10 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+              <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
+              <div class="absolute inset-0 z-0">
+                <img 
+                  src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20002837.png" 
+                  alt="Bookkeeping and ledger workspace" 
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+                >
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/85 via-brand-navy/65 to-brand-navy/40"></div>
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                  <i class="fa-solid fa-book-journal-whills"></i>
+                </div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40 mb-2">
+                  Foundational Recordkeeping
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white drop-shadow-md">Bookkeeping & Accounting</h3>
+                <p class="text-white text-sm sm:text-base mt-3 leading-relaxed drop-shadow font-normal max-w-xl bg-brand-navy/40 backdrop-blur-sm p-3.5 rounded-lg border border-white/10">
+                  Professional bookkeeping and accounting support that helps businesses maintain accurate, organized, and dependable financial records. We oversee accounts payable and receivable, reconcile bank balances, and structure your ledgers for absolute transparency.
+                </p>
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-white font-medium">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
+                    <span>General Ledger Organization</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
+                    <span>Accounts Payable & Receivable</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
+                    <span>Monthly Bank Reconciliation</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
+                    <span>Audit-Ready Records</span>
+                  </div>
+                </div>
+              </div>
+              <div class="relative z-10 mt-8 pt-5 border-t border-white/20 flex flex-wrap items-center justify-between gap-3 bg-brand-navy/60 backdrop-blur-md px-4 py-3 rounded-lg border">
+                <span class="text-xs font-semibold text-gray-200 uppercase tracking-wider">Custom Service Retainers</span>
+                <button onclick="requestServiceQuote('Bookkeeping & Accounting')" class="text-xs sm:text-sm font-bold text-brand-gold hover:text-white transition-colors inline-flex items-center gap-1.5">
+                  Inquire About Bookkeeping <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Service 2: Tax Preparation & Filing (Image 2 background) -->
+            <div class="relative overflow-hidden lg:col-span-5 rounded-2xl p-8 sm:p-9 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+              <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
+              <div class="absolute inset-0 z-0">
+                <img 
+                  src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20002925.png" 
+                  alt="Tax preparation workspace" 
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/65 to-brand-navy/35"></div>
+                <div class="absolute inset-0 bg-black/15"></div>
+              </div>
+
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                  <i class="fa-solid fa-file-invoice-dollar"></i>
+                </div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40 mb-2">
+                  Compliance & Filing
+                </span>
+                <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Tax Preparation & Filing</h3>
+                <p class="text-white text-xs sm:text-sm mt-3 leading-relaxed drop-shadow bg-brand-navy/40 backdrop-blur-sm p-3 rounded-lg border border-white/10">
+                  Individual and business tax preparation, filing assistance, and applicable tax reporting services. We help clients navigate complex requirements with meticulous documentation.
+                </p>
+                <ul class="mt-4 space-y-2 text-xs sm:text-sm text-white font-medium">
+                  <li class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-angle-right text-brand-gold"></i> Individual & Family Income Tax Returns
+                  </li>
+                  <li class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-angle-right text-brand-gold"></i> Small Business & LLC Tax Preparation
+                  </li>
+                  <li class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-angle-right text-brand-gold"></i> Applicable Sales & Local Tax Reporting
+                  </li>
+                </ul>
+              </div>
+              <div class="relative z-10 mt-8 pt-4 border-t border-white/20 flex items-center justify-between bg-brand-navy/60 backdrop-blur-md px-4 py-3 rounded-lg border">
+                <span class="text-xs text-gray-200">Tax Year Deadlines Managed</span>
+                <button onclick="requestServiceQuote('Tax Preparation')" class="text-xs sm:text-sm font-bold text-brand-gold hover:text-white transition-colors">
+                  Tax Consultation →
+                </button>
+              </div>
+            </div>
+
+            <!-- Service 3: Payroll Processing (Image 3 background) -->
+            <div class="relative overflow-hidden lg:col-span-5 rounded-2xl p-8 sm:p-9 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+              <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
+              <div class="absolute inset-0 z-0">
+                <img 
+                  src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20003005.png" 
+                  alt="Payroll and calculations workspace" 
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/65 to-brand-navy/35"></div>
+                <div class="absolute inset-0 bg-black/15"></div>
+              </div>
+
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                  <i class="fa-solid fa-users-gear"></i>
+                </div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40 mb-2">
+                  Workforce Compensation
+                </span>
+                <h3 class="font-serif text-2xl font-bold text-white drop-shadow-md">Payroll Processing</h3>
+                <p class="text-white text-xs sm:text-sm mt-3 leading-relaxed drop-shadow bg-brand-navy/40 backdrop-blur-sm p-3 rounded-lg border border-white/10">
+                  End-to-end payroll calculations, payroll tax deposits, quarterly and annual payroll filings, W-2s, and 1099 distribution to keep your business fully compliant with federal and state regulations.
+                </p>
+                <ul class="mt-4 space-y-2 text-xs sm:text-sm text-white font-medium">
+                  <li class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-angle-right text-brand-gold"></i> Direct Deposit & Pay Statement Prep
+                  </li>
+                  <li class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-angle-right text-brand-gold"></i> Quarterly & Annual Payroll Filings
+                  </li>
+                  <li class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-angle-right text-brand-gold"></i> Year-End W-2 & 1099 Vendor Filings
+                  </li>
+                </ul>
+              </div>
+              <div class="relative z-10 mt-8 pt-4 border-t border-white/20 flex items-center justify-between bg-brand-navy/60 backdrop-blur-md px-4 py-3 rounded-lg border">
+                <span class="text-xs text-gray-200">Scheduled Cycles</span>
+                <button onclick="requestServiceQuote('Payroll Processing')" class="text-xs sm:text-sm font-bold text-brand-gold hover:text-white transition-colors">
+                  Payroll Inquiries →
+                </button>
+              </div>
+            </div>
+
+            <!-- Service 4: Financial Reporting & Advisory (Image 4 background) -->
+            <div class="relative overflow-hidden lg:col-span-7 rounded-2xl p-8 sm:p-10 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+              <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
+              <div class="absolute inset-0 z-0">
+                <img 
+                  src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20003101.png" 
+                  alt="Financial analytics and reporting workspace" 
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+                >
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/85 via-brand-navy/65 to-brand-navy/40"></div>
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+
+              <div class="relative z-10">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-widest text-brand-gold border border-brand-gold/40 mb-2">
+                  Strategic Oversight
+                </span>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white drop-shadow-md">Financial Reporting & Advisory</h3>
+                <p class="text-white text-sm sm:text-base mt-3 leading-relaxed drop-shadow font-normal max-w-xl bg-brand-navy/40 backdrop-blur-sm p-3.5 rounded-lg border border-white/10">
+                  Profit and loss statements, balance sheets, budgeting, financial forecasting, and cash-flow management. We transform raw numbers into intuitive reports that guide your business decisions.
+                </p>
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-white font-medium">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                    <span>Balance Sheets & P&L Statements</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                    <span>Cash Flow Optimization</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                    <span>Periodic Management Reports</span>
+                  </div>
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                    <i class="fa-solid fa-check text-brand-gold text-xs"></i>
+                    <span>Operating Budget Development</span>
+                  </div>
+                </div>
+              </div>
+              <div class="relative z-10 mt-8 pt-5 border-t border-white/20 flex flex-wrap items-center justify-between gap-3 bg-brand-navy/60 backdrop-blur-md px-4 py-3 rounded-lg border">
+                <span class="text-xs text-brand-gold font-semibold">Actionable Management Insights</span>
+                <button onclick="requestServiceQuote('Financial Reporting')" class="text-xs sm:text-sm font-bold text-brand-gold hover:text-white transition-colors inline-flex items-center gap-1.5">
+                  Request Reporting Advisory <i class="fa-solid fa-arrow-right text-xs"></i>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION D: WHY WORK WITH PIERRE'S BOOKKEEPING SERVICES? -->
+      <section class="py-20 bg-brand-cream border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Our Value Standard</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-navy mt-2">Why Discerning Businesses Rely On Us</h2>
+            <p class="text-gray-600 mt-3 text-base">
+              Accurate financial records are not just about regulatory compliance; they are the compass for every operational decision.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm space-y-3">
+              <div class="text-brand-gold text-2xl font-serif font-bold">01</div>
+              <h3 class="font-serif text-xl font-bold text-brand-navy">Organized Financial Practice</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Structured ledger discipline ensures records are clean, accessible, and audit-ready year-round, eliminating tax season panic.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm space-y-3">
+              <div class="text-brand-gold text-2xl font-serif font-bold">02</div>
+              <h3 class="font-serif text-xl font-bold text-brand-navy">Personalized Accountability</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Work directly with seasoned financial professionals led by Felicia Pierre. Your account receives dedicated attention rather than automated routing.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm space-y-3">
+              <div class="text-brand-gold text-2xl font-serif font-bold">03</div>
+              <h3 class="font-serif text-xl font-bold text-brand-navy">Clear Financial Guidance</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                We interpret balance sheets and profit & loss statements into actionable intelligence, clarifying your operating margins and cash position.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION E: FOUNDER INTRODUCTION (Editorial Split) -->
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5">
+              <div class="relative">
+                <div class="rounded-2xl overflow-hidden border-2 border-brand-gold/30 shadow-2xl bg-brand-navy group">
+                  <!-- Founder Principal Showcase Image with subtle hover zoom -->
+                  <img 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20004131.png" 
+                    alt="Felicia Pierre - Founder & Principal Accountant" 
+                    class="w-full h-[430px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  >
+                  <!-- Subtle gradient vignette for editorial prestige -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+                <!-- Editorial badge overlay -->
+                <div class="absolute -bottom-5 -right-3 sm:-right-5 bg-brand-navy text-white p-4 sm:p-5 rounded-xl border border-brand-gold/50 shadow-2xl max-w-xs">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    <span class="text-[10px] uppercase tracking-wider font-bold text-brand-gold">Founder & Principal</span>
+                  </div>
+                  <p class="font-serif italic text-sm text-white">"Practical Financial Experience. Professional Attention."</p>
+                  <p class="text-xs font-semibold text-gray-300 mt-2">— Felicia Pierre, MSA, EA</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-50 text-amber-900 text-xs font-semibold border border-amber-200">
+                <i class="fa-solid fa-user-tie"></i> Founder & Principal Accountant
+              </div>
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-navy leading-snug">
+                Experience Behind Every Number.
+              </h2>
+              <div class="text-gray-600 space-y-4 text-base leading-relaxed">
+                <p>
+                  Pierre's Bookkeeping Services, LLC was established in 2015 by <strong class="text-brand-navy font-semibold">Felicia Pierre</strong>, bringing years of dedicated practice in accounting, bookkeeping, and financial operations dating back to 2007.
+                </p>
+                <p>
+                  Felicia built the practice upon a singular philosophy: every entrepreneur and individual deserves clear, orderly financial records that remove guesswork from business management. Her background spans accounting operations, payroll execution, and individualized tax preparation.
+                </p>
+              </div>
+
+              <!-- Credential highlights with honest verification indicators -->
+              <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 space-y-2">
+                <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-500">
+                  <span>Professional Credentials & Background</span>
+                  <span class="text-amber-800 bg-amber-100 px-2 py-0.5 rounded text-[10px]">Verification In Progress</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700 pt-1">
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-graduation-cap text-brand-gold"></i>
+                    <span>MS in Accounting (MSA)</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-certificate text-brand-gold"></i>
+                    <span>Enrolled Agent (EA)</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-brand-gold"></i>
+                    <span>In Practice Since 2007</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase text-brand-gold"></i>
+                    <span>Firm Established 2015</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-2 flex items-center gap-4">
+                <a href="#about" onclick="navigateTo('about'); return false;" class="px-6 py-3 bg-brand-navy text-white text-sm font-semibold rounded hover:bg-brand-slate transition-colors inline-flex items-center gap-2">
+                  <span>Meet Felicia & Learn Our History</span>
+                  <i class="fa-solid fa-arrow-right text-xs text-brand-gold"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION F: OUR WORKING PROCESS -->
+      <section class="py-20 bg-brand-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Structured Engagement</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2">How We Work Together</h2>
+            <p class="text-gray-300 mt-3 text-sm sm:text-base">
+              A transparent, calm, and organized onboarding process designed to bring immediate order to your financial reporting.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative">
+              <span class="text-3xl font-serif font-bold text-brand-gold/60">01</span>
+              <h3 class="font-serif text-xl font-bold text-white mt-4">Initial Consultation</h3>
+              <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                We review your current bookkeeping, accounting, payroll, or tax preparation needs, identifying existing pain points and reporting requirements.
+              </p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative">
+              <span class="text-3xl font-serif font-bold text-brand-gold/60">02</span>
+              <h3 class="font-serif text-xl font-bold text-white mt-4">Financial Organization</h3>
+              <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                We establish chart of accounts integrity, collect verified documentation, reconcile historical entries, and formulate an ongoing schedule.
+              </p>
+            </div>
+
+            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative">
+              <span class="text-3xl font-serif font-bold text-brand-gold/60">03</span>
+              <h3 class="font-serif text-xl font-bold text-white mt-4">Ongoing Support</h3>
+              <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                Receive punctual periodic reports, timely payroll execution, and reliable tax preparation, with direct line access whenever questions arise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION G: TESTIMONIAL PREVIEW (Honest Approved Placeholder Layout) -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Client Experience</span>
+          <h2 class="font-serif text-3xl font-bold text-brand-navy mt-1 mb-8">Client Testimonials & Feedback</h2>
+          
+          <div class="p-8 sm:p-12 rounded-2xl bg-brand-cream border border-gray-200 relative">
+            <i class="fa-solid fa-quote-left text-4xl text-brand-gold/30 mb-4 block"></i>
+            <p class="text-base sm:text-lg text-gray-700 italic max-w-2xl mx-auto">
+              "Approved client testimonials are currently being curated and will be published following business owner review. We adhere strictly to verified endorsements from real business clients."
+            </p>
+            <div class="mt-6 pt-6 border-t border-gray-200/60 inline-flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-brand-navy text-brand-gold flex items-center justify-center font-bold text-xs">
+                PBKS
+              </div>
+              <div class="text-left">
+                <p class="text-xs font-bold text-brand-navy uppercase tracking-wider">Pierre's Bookkeeping Services, LLC</p>
+                <p class="text-[11px] text-amber-800">Verification in progress for client statements</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION H: HOMEPAGE CONVERSION CTA -->
+      <section class="py-16 bg-gradient-to-r from-brand-navy to-brand-slate text-white border-t border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+            Your Business Deserves Financial Clarity.
+          </h2>
+          <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mt-4">
+            Let's discuss your bookkeeping, accounting, payroll, or tax preparation needs with a personalized consultation.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button onclick="openAppointmentModal()" class="w-full sm:w-auto px-8 py-3.5 bg-brand-gold text-brand-navy font-bold rounded hover:bg-brand-goldHover transition-colors shadow-lg">
+              Schedule an Appointment
+            </button>
+            <a href="tel:2038897272" class="w-full sm:w-auto px-7 py-3.5 bg-white/10 hover:bg-white/20 text-white font-medium rounded border border-white/20 transition-colors inline-flex items-center justify-center gap-2">
+              <i class="fa-solid fa-phone text-brand-gold"></i>
+              <span>Call 203-889-7272</span>
+            </a>
+          </div>
+          <p class="text-xs text-gray-400 mt-6">
+            Office visits arranged strictly by appointment · Orlando, FL & Regional Service Coverage
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. WHAT'S NEW! PAGE VIEW                   -->
+    <!-- ========================================== -->
+    <div id="page-whats-new" class="page-section">
+      <!-- What's New Header -->
+      <div class="bg-brand-navy text-white py-16 border-b border-brand-gold/30 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 28px 28px;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-400/20 text-brand-gold text-xs font-semibold uppercase tracking-widest border border-brand-gold/30 mb-3">
+            <i class="fa-solid fa-bullhorn text-xs"></i> Official Firm Announcement & Expansion
+          </div>
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold text-white">What's New!</h1>
+          <p class="text-gray-300 max-w-3xl mt-4 text-base sm:text-lg leading-relaxed">
+            Exciting developments, expanded physical facilities across Orlando, and nationwide tax preparation services for individuals and small businesses.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+        
+        <!-- MAIN HIGHLIGHT: NEW OFFICE LOCATION & EXPANSION ANNOUNCEMENT -->
+        <div class="bg-white rounded-3xl border border-gray-200 shadow-xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            
+            <div class="lg:col-span-7 p-8 sm:p-12 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 text-amber-900 text-xs font-bold uppercase tracking-wider border border-amber-200">
+                <i class="fa-solid fa-star text-xs text-brand-gold"></i> New Office Location!
+              </div>
+
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-navy leading-tight">
+                Expanded Facilities & Comprehensive Income Tax Filing Services
+              </h2>
+
+              <!-- Core Client Announcement (Exact & Refined) -->
+              <div class="p-6 bg-slate-50 border-l-4 border-brand-gold rounded-r-2xl space-y-3">
+                <p class="text-base sm:text-lg text-brand-slate font-medium leading-relaxed">
+                  We are offering <strong class="text-brand-navy font-bold">Income Tax Filing Services for Individuals and Small Businesses</strong>. We are certified PTIN Tax Preparers with multiple certifications in Accounting. We now offer several service locations all over the country!
+                </p>
+              </div>
+
+              <!-- Facility Invitation Section -->
+              <div class="p-6 bg-brand-cream border border-gray-200 rounded-2xl space-y-4">
+                <h3 class="font-serif text-lg font-bold text-brand-navy flex items-center gap-2">
+                  <i class="fa-solid fa-location-dot text-brand-gold"></i> Visit Our Orlando Office Locations
+                </h3>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Come in to our new main office located in <strong>Downtown Orlando</strong> or at <strong>Millenia Mall, Orlando, FL</strong> and explore each area while you receive the quality Accounting services that you deserve!
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  <div class="bg-white p-3.5 rounded-xl border border-gray-200 flex items-start gap-3 shadow-2xs">
+                    <div class="w-8 h-8 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs mt-0.5">
+                      <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                      <strong class="text-xs font-bold text-brand-navy block">Downtown Orlando Main Office</strong>
+                      <span class="text-[11px] text-gray-600 block">20 North Orange Avenue, Suite 1100</span>
+                      <span class="text-[10px] text-amber-800 font-semibold uppercase">Orlando, FL 32801</span>
+                    </div>
+                  </div>
+
+                  <div class="bg-white p-3.5 rounded-xl border border-gray-200 flex items-start gap-3 shadow-2xs">
+                    <div class="w-8 h-8 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs mt-0.5">
+                      <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div>
+                      <strong class="text-xs font-bold text-brand-navy block">Millenia Mall Location</strong>
+                      <span class="text-[11px] text-gray-600 block">Millenia Mall Area Facilities</span>
+                      <span class="text-[10px] text-amber-800 font-semibold uppercase">Orlando, FL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scheduling & Remote Service Pathway -->
+              <div class="space-y-4 pt-2">
+                <div class="flex items-start gap-3 p-4 bg-emerald-50 border border-emerald-200 rounded-xl">
+                  <i class="fa-solid fa-shield-halved text-emerald-700 text-lg mt-0.5 shrink-0"></i>
+                  <div class="text-xs sm:text-sm text-emerald-950 leading-relaxed">
+                    <strong class="font-bold text-emerald-900 block mb-0.5">Remote & Secure Service Available:</strong>
+                    Tax preparation services may also be performed remotely and securely without an in-office visit. Enjoy full digital tax onboarding from anywhere in the country.
+                  </div>
+                </div>
+
+                <div class="text-sm text-gray-700 space-y-2">
+                  <p class="font-semibold text-brand-navy">
+                    <i class="fa-solid fa-calendar-check text-brand-gold mr-1.5"></i> Call to schedule an appointment for services at <a href="tel:2038897272" class="text-brand-navy font-bold underline decoration-brand-gold hover:text-brand-gold transition-colors">203-889-7272</a>.
+                  </p>
+                  <p class="text-xs text-gray-600">
+                    You can also email us directly at <a href="mailto:felicia@pierresbookkeeping.com" class="text-brand-navy font-medium underline">felicia@pierresbookkeeping.com</a> or complete a contact form on our website.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Quick CTA Buttons -->
+              <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <a href="tel:2038897272" class="px-7 py-3.5 bg-brand-navy text-white text-xs sm:text-sm font-bold rounded-xl hover:bg-brand-slate transition-all shadow-md flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-phone text-brand-gold"></i>
+                  <span>Call to Schedule: 203-889-7272</span>
+                </a>
+                <button onclick="navigateTo('contact')" class="px-7 py-3.5 bg-brand-gold text-brand-navy text-xs sm:text-sm font-bold rounded-xl hover:bg-brand-goldHover transition-all shadow-md flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>Complete Contact Form</span>
+                </button>
+              </div>
+
+            </div>
+
+            <!-- Right Visual Gallery Column -->
+            <div class="lg:col-span-5 bg-brand-navy p-8 sm:p-10 flex flex-col justify-between text-white border-l border-gray-200">
+              <div class="space-y-5">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Facility Showcase</span>
+                  <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300">Orange County, FL</span>
+                </div>
+                
+                <h3 class="font-serif text-2xl font-bold leading-snug">
+                  Professional Consultation Environment
+                </h3>
+                
+                <div class="rounded-2xl overflow-hidden border-2 border-white/15 shadow-2xl relative group">
+                  <img 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg" 
+                    alt="Downtown Orlando Main Office Desk at Pierre's Bookkeeping"
+                    class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  >
+                  <div class="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-xs text-gray-200 font-medium">
+                    Downtown Orlando Executive Suite 1100
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 pt-1">
+                  <div class="rounded-xl overflow-hidden border border-white/15 shadow-sm group">
+                    <img 
+                      src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469053146_1090186642511505_6837190653210006501_n.jpg" 
+                      alt="Client consultation area" 
+                      class="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-300"
+                    >
+                  </div>
+                  <div class="rounded-xl overflow-hidden border border-white/15 shadow-sm group">
+                    <img 
+                      src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg" 
+                      alt="Office suite entrance" 
+                      class="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-300"
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-6 border-t border-white/15 space-y-3 text-xs text-gray-300">
+                <div class="flex items-center gap-2 text-brand-gold font-bold">
+                  <i class="fa-solid fa-certificate"></i> Certified PTIN Tax Preparers
+                </div>
+                <p class="leading-relaxed">
+                  Backed by multiple certifications in Accounting, our team provides the individualized attention and ethical financial oversight your returns deserve.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3-PILLAR FOUNDATION CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="p-8 bg-white rounded-2xl border border-gray-200 shadow-sm space-y-4 hover:border-brand-gold/60 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-brand-cream text-brand-navy border border-gray-200 flex items-center justify-center text-xl shadow-2xs">
+              <i class="fa-solid fa-id-badge text-brand-gold"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-navy">Certified PTIN Preparers</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              We hold active IRS Preparer Tax Identification Numbers (PTIN) and maintain multiple accounting credentials, ensuring rigorous compliance with federal tax codes.
+            </p>
+          </div>
+
+          <div class="p-8 bg-white rounded-2xl border border-gray-200 shadow-sm space-y-4 hover:border-brand-gold/60 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-brand-cream text-brand-navy border border-gray-200 flex items-center justify-center text-xl shadow-2xs">
+              <i class="fa-solid fa-earth-americas text-brand-gold"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-navy">Nationwide Reach</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              We now offer several service locations all over the country. Our infrastructure securely manages individual and small business accounts across state lines.
+            </p>
+          </div>
+
+          <div class="p-8 bg-white rounded-2xl border border-gray-200 shadow-sm space-y-4 hover:border-brand-gold/60 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-brand-cream text-brand-navy border border-gray-200 flex items-center justify-center text-xl shadow-2xs">
+              <i class="fa-solid fa-laptop-code text-brand-gold"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-brand-navy">Secure Remote Filing</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Tax preparation services may be performed remotely and securely without an in-office visit, saving you travel time while guaranteeing accurate reporting.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3. PRACTICE AREAS (TAX FILING SERVICES)   -->
+    <!-- ========================================== -->
+    <div id="page-practice-areas" class="page-section">
+      <!-- Practice Areas Header -->
+      <div class="bg-brand-navy text-white py-16 border-b border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Specialized Financial Competencies</span>
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Practice Areas (Tax Filing Services)</h1>
+          <p class="text-gray-300 max-w-3xl mt-4 text-base sm:text-lg leading-relaxed">
+            Multi-state sales tax compliance, personal property filings, comprehensive payroll infrastructure, customized internal reporting, ethical bookkeeping segregation, and strategic cash management.
+          </p>
+        </div>
+      </div>
+
+      <!-- Content Container -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+
+        <!-- 1. SALES, ANNUAL RENTAL INCOME, AND PERSONAL PROPERTY TAX (Multi-Jurisdictional Tax Authority) -->
+        <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
+          <!-- Background Image & Translucent Gradient Layer -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80" 
+              alt="Tax forms, state filing documents and calculations" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+          </div>
+
+          <div class="relative z-10 space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+              </div>
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+                  Multi-Jurisdictional Tax Authority
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">
+                  Sales, Annual Rental Income, and Personal Property Tax
+                </h2>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+              <strong class="text-brand-gold font-semibold">NYS, CT & FL Sales Tax Filing Expert, Annual Rental Income Filing & Personal Property Tax Filing:</strong>
+              We have extensive experience in sales tax filing for both NYS and CT sales tax with companies on both <span class="text-white font-semibold underline decoration-brand-gold decoration-2">accrual and cash basis accounting methods</span>. We also have extensive experience with Connecticut (CT) state personal property tax filing and the CT state rental income annual report.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2 text-white">
+                <h3 class="font-serif font-bold text-brand-gold text-base flex items-center gap-2">
+                  <i class="fa-solid fa-map-location-dot text-brand-gold text-sm"></i> Multi-State Sales Tax
+                </h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Expertise navigating Department of Taxation guidelines for New York State (NYS), Connecticut (CT), and Florida (FL), reconciling local jurisdictional surtaxes across cash and accrual methods.
+                </p>
+              </div>
+
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2 text-white">
+                <h3 class="font-serif font-bold text-brand-gold text-base flex items-center gap-2">
+                  <i class="fa-solid fa-building-user text-brand-gold text-sm"></i> Annual Rental Income
+                </h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Dedicated preparation and filing of annual rental income reports for real estate operators, property holding companies, and individual residential or commercial landlords.
+                </p>
+              </div>
+
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2 text-white">
+                <h3 class="font-serif font-bold text-brand-gold text-base flex items-center gap-2">
+                  <i class="fa-solid fa-boxes-stacked text-brand-gold text-sm"></i> Personal Property Tax
+                </h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Detailed asset declaration and municipal filings for commercial personal property, machinery, furnishings, and leasehold improvements subject to local property assessments.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/20 text-xs text-gray-300 bg-brand-navy/50 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/10">
+              <span>Applicable across New York, Connecticut, Florida & nationwide remote clients</span>
+              <button onclick="requestServiceQuote('Tax Preparation & Filing')" class="text-brand-gold font-bold hover:text-white transition-colors inline-flex items-center gap-1">
+                Inquire About Sales & Property Taxes <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. PAYROLL (Workforce & Compliance Operations) -->
+        <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
+          <!-- Background Image & Translucent Gradient Layer -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=80" 
+              alt="Payroll processing, team calculations and payroll management" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+          </div>
+
+          <div class="relative z-10 space-y-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+                  Workforce & Compliance Operations
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Payroll</h2>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-sm sm:text-base text-gray-100 leading-relaxed">
+              <p class="bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+                For clients, we currently make all payroll tax deposits, file the quarterly and annual payroll taxes, and prepare all W-2s & 1099s. In addition, we oversee printing, distribution, and filing of all payroll reports. We also work with payroll companies that currently execute payroll filing for larger workforces, such as <strong class="text-white">ADP</strong> and <strong class="text-white">Paychex</strong>.
+              </p>
+              
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15">
+                <p class="text-xs font-bold text-brand-gold uppercase tracking-wider mb-2">
+                  Comprehensive Software & Engine Experience:
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-navy">
+                  <span class="px-3 py-1 bg-white/95 rounded border border-gray-300 shadow-2xs">ADP</span>
+                  <span class="px-3 py-1 bg-white/95 rounded border border-gray-300 shadow-2xs">Paychex</span>
+                  <span class="px-3 py-1 bg-white/95 rounded border border-gray-300 shadow-2xs">BDB</span>
+                  <span class="px-3 py-1 bg-white/95 rounded border border-gray-300 shadow-2xs">Sage Payroll</span>
+                  <span class="px-3 py-1 bg-white/95 rounded border border-gray-300 shadow-2xs">Intuit Payroll</span>
+                  <span class="px-3 py-1 bg-white/95 rounded border border-gray-300 shadow-2xs">PrimePay</span>
+                  <span class="px-3 py-1 bg-white/95 rounded border border-gray-300 shadow-2xs">Compliance Solutions</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2 text-xs">
+              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 text-white">
+                <strong class="text-brand-gold block text-sm font-semibold mb-1">Hands-On Calculations</strong>
+                <p class="text-gray-200">Complete gross-to-net processing, withholdings, tax deposits, and multi-state compliance.</p>
+              </div>
+              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 text-white">
+                <strong class="text-brand-gold block text-sm font-semibold mb-1">Quarterly & Annual Filings</strong>
+                <p class="text-gray-200">Preparation and filing of Form 941, Form 940, state unemployment returns, W-2s, and 1099s.</p>
+              </div>
+              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 text-white sm:col-span-2 lg:col-span-1">
+                <strong class="text-brand-gold block text-sm font-semibold mb-1">Customized Payroll Analytics</strong>
+                <p class="text-gray-200">Furnishing of payroll reports, customized managerial breakdowns, and Payroll % to Gross Sales metrics.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. ADVISORY (Executive Intelligence) -->
+        <section class="relative overflow-hidden rounded-2xl border border-blue-500/30 p-8 sm:p-10 shadow-xl space-y-6 group">
+          <!-- Background Image & Translucent Gradient Layer -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80" 
+              alt="Financial reporting dashboard, forecasting and executive charts" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/70"></div>
+          </div>
+
+          <div class="relative z-10 space-y-6 text-white">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-widest text-brand-gold border border-brand-gold/40">
+                  Executive Intelligence
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Advisory</h2>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+              Performance in budgeting and cash flow management. We specialize in customized internal reporting catered directly to our clients' strategic needs. Monthly, quarterly, and yearly internal Profit & Loss statements (P&Ls), balance sheets, and job profitability reports are our specialty.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+                <h3 class="font-serif font-bold text-brand-gold text-base">Periodic Statements</h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Monthly, quarterly, and yearly internal P&Ls and balance sheets structured for management clarity rather than confusing jargon.
+                </p>
+              </div>
+
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+                <h3 class="font-serif font-bold text-brand-gold text-base">Job Profitability</h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Granular project and job costing reports that uncover which contracts yield your healthiest operating margins.
+                </p>
+              </div>
+
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+                <h3 class="font-serif font-bold text-brand-gold text-base">Labor & Subcontractor %</h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Payroll % to Gross Sales and Subcontractor % to Gross Revenue reports available on request to control variable costs.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-4 bg-brand-navy/80 border border-brand-gold/40 rounded-xl text-xs text-gray-100 backdrop-blur-md">
+              <strong class="text-brand-gold font-semibold block mb-1">Our Core Advisory Mission:</strong>
+              The purpose of internal reporting is for management and business owners to make more effective, financially sound, and profitable decisions on a re-occurring basis.
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. BOOKKEEPING (Accurate & Ethical Service) -->
+        <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
+          <!-- Background Image & Translucent Gradient Layer -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" 
+              alt="Ethical corporate governance, ledgers and bookkeeping records" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+          </div>
+
+          <div class="relative z-10 space-y-6 text-white">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+                <i class="fa-solid fa-book-journal-whills"></i>
+              </div>
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+                  Accurate & Ethical Service
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Bookkeeping</h2>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+              <p>
+                One of the most important aspects in bookkeeping and accounting is that we provide <strong class="text-white font-semibold">accuracy and ethical services</strong>. We believe in <span class="text-white font-semibold underline decoration-brand-gold decoration-2">separation of duties</span> to prevent fraud and provide accurate work through rigorous cross-referencing.
+              </p>
+              <p>
+                We work strictly according to deadlines and believe the key to financial success is meticulous organization and punctuality. Continuing education is a must in our firm, and leveraging premier news and event resources is key information that empowers us to deliver high-quality work.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
+              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 flex items-start gap-3">
+                <i class="fa-solid fa-shield-halved text-brand-gold text-base mt-0.5"></i>
+                <div>
+                  <strong class="text-brand-gold font-semibold block mb-0.5">Separation of Duties</strong>
+                  <span class="text-gray-200">Internal structural checks and cross-referencing designed to eliminate error and prevent fraud.</span>
+                </div>
+              </div>
+
+              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 flex items-start gap-3">
+                <i class="fa-solid fa-calendar-check text-brand-gold text-base mt-0.5"></i>
+                <div>
+                  <strong class="text-brand-gold font-semibold block mb-0.5">Meeting Strict Deadlines</strong>
+                  <span class="text-gray-200">Never miss a statutory tax or payroll deadline with our structured milestone calendar.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. CASH MANAGEMENT (Financial Lifeline) -->
+        <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
+          <!-- Background Image & Translucent Gradient Layer -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1600&q=80" 
+              alt="Cash flow, accounts receivable and liquidity management" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+          </div>
+
+          <div class="relative z-10 space-y-6 text-white">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+              </div>
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+                  Financial Lifeline
+                </span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Cash Management</h2>
+              </div>
+            </div>
+
+            <p class="text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+              Budgeting and cash flow statements are the heart and lifeline of any company. <strong class="text-white">Accounts Receivable (A/R) & Accounts Payable (A/P) go hand in hand</strong>: bills cannot be paid if A/R is not collected on a timely basis, and A/R will not exist if sales are not generated. Aside from actively managing cash flow, internal reporting plays a crucial role in safeguarding company liquidity.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+                <div class="text-brand-gold text-xl font-bold"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                <h3 class="font-serif font-bold text-brand-gold text-base">Sales to Cash Inflow</h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Structuring prompt invoicing cycles to shorten Days Sales Outstanding (DSO) and accelerate liquid cash receipts.
+                </p>
+              </div>
+
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+                <div class="text-brand-gold text-xl font-bold"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <h3 class="font-serif font-bold text-brand-gold text-base">A/R Collection Discipline</h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Systematic oversight of aged accounts receivable to ensure uncollected revenue does not strangle daily operations.
+                </p>
+              </div>
+
+              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+                <div class="text-brand-gold text-xl font-bold"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3 class="font-serif font-bold text-brand-gold text-base">A/P Timing & Solvency</h3>
+                <p class="text-xs text-gray-200 leading-relaxed">
+                  Coordinating vendor disbursements with cash availability to preserve vital vendor goodwill and avoid late surcharges.
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/20 bg-brand-navy/50 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/10">
+              <span class="text-xs text-gray-300">Need disciplined cash flow management for your operations?</span>
+              <button onclick="requestServiceQuote('Cash Management & Reporting')" class="px-5 py-2.5 bg-brand-gold text-brand-navy text-xs font-bold rounded hover:bg-brand-goldHover transition-colors shadow-md">
+                Schedule Cash Flow Review
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 4. SERVICES PAGE VIEW (CATALOG)            -->
+    <!-- ========================================== -->
+    <div id="page-services" class="page-section">
+      
+      <!-- Services Banner -->
+      <div class="bg-brand-navy text-white py-16 border-b border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Comprehensive Accounting Offerings</span>
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Services & Financial Solutions</h1>
+          <p class="text-gray-300 max-w-3xl mt-4 text-base sm:text-lg leading-relaxed">
+            Accurate financial accounting is the backbone of sustainable business growth. We provide clear, dependable bookkeeping, tax, payroll, and advisory solutions tailored to your operational rhythm.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Nav Anchor Bar (Professionally Centered) -->
+      <div class="bg-white border-b border-gray-200 sticky top-20 z-30 shadow-xs hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div class="flex items-center justify-center flex-wrap gap-3 lg:gap-4 text-xs font-semibold tracking-wider uppercase">
+            <a href="#cat-bookkeeping" class="px-4 py-2 rounded-full border border-emerald-900/30 bg-emerald-950/10 text-emerald-950 hover:bg-emerald-900 hover:text-white transition-all shadow-2xs inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+              <span>1. Bookkeeping & Accounting</span>
+            </a>
+            <a href="#cat-tax" class="px-4 py-2 rounded-full border border-rose-900/30 bg-rose-950/10 text-rose-950 hover:bg-rose-900 hover:text-white transition-all shadow-2xs inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-rose-600"></span>
+              <span>2. Tax Preparation & Filing</span>
+            </a>
+            <a href="#cat-payroll" class="px-4 py-2 rounded-full border border-amber-900/30 bg-amber-950/10 text-amber-950 hover:bg-amber-900 hover:text-white transition-all shadow-2xs inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+              <span>3. Payroll Processing</span>
+            </a>
+            <a href="#cat-reporting" class="px-4 py-2 rounded-full border border-blue-900/30 bg-blue-950/10 text-blue-950 hover:bg-blue-900 hover:text-white transition-all shadow-2xs inline-flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+              <span>4. Reporting & Advisory</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
+
+        <!-- A. BOOKKEEPING & ACCOUNTING (LUXURY DARK GREEN) -->
+        <section id="cat-bookkeeping" class="relative overflow-hidden rounded-3xl p-8 sm:p-12 border border-emerald-500/20 shadow-2xl transition-all duration-300" style="background: radial-gradient(120% 120% at 0% 0%, #0d3827 0%, #062319 55%, #03140e 100%);">
+          <!-- Subtle Luxury Watermark Glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
+            <div class="lg:col-span-5 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-bold tracking-widest uppercase">
+                <i class="fa-solid fa-leaf text-xs text-brand-gold"></i> Service Category 01 · Ledger Integrity
+              </div>
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">Bookkeeping & Accounting</h2>
+              <p class="text-emerald-100/90 leading-relaxed text-sm sm:text-base font-light">
+                Clean books provide total peace of mind. Our systematic bookkeeping ensures that every expenditure and revenue stream is properly recorded, reconciled, and categorized according to standard accounting principles.
+              </p>
+              <div class="p-4 bg-emerald-950/70 border border-emerald-400/20 rounded-xl backdrop-blur-sm">
+                <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-1">Ideal For</p>
+                <p class="text-xs text-emerald-100/80">Growing small businesses, LLCs, independent contractors, and professional service firms seeking reliable ledger integrity.</p>
+              </div>
+              <button onclick="requestServiceQuote('Bookkeeping & Accounting')" class="mt-2 px-6 py-3 bg-brand-gold text-brand-navy text-sm font-bold rounded-lg hover:bg-brand-goldHover transition-all shadow-lg inline-flex items-center gap-2">
+                <span>Inquire About Bookkeeping</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+
+            <div class="lg:col-span-7 bg-emerald-950/60 backdrop-blur-md p-8 rounded-2xl border border-emerald-400/25 shadow-xl space-y-6">
+              <h3 class="font-serif text-xl font-bold text-white border-b border-emerald-500/20 pb-3 flex items-center justify-between">
+                <span>Included Scope of Work</span>
+                <span class="text-xs font-normal text-emerald-300 uppercase tracking-widest font-sans">Core Routine</span>
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-emerald-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-brand-gold"></i> Business Bookkeeping
+                  </h4>
+                  <p class="text-emerald-100/80 text-xs leading-relaxed">
+                    Daily or periodic logging of commercial transactions, ledger maintenance, and receipt categorization.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-emerald-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-receipt text-brand-gold"></i> Accounts Payable & Receivable
+                  </h4>
+                  <p class="text-emerald-100/80 text-xs leading-relaxed">
+                    Tracking vendor disbursements, ensuring timely bill payments, and monitoring customer balances.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-emerald-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-scale-balanced text-brand-gold"></i> Bank & Credit Reconciliation
+                  </h4>
+                  <p class="text-emerald-100/80 text-xs leading-relaxed">
+                    Systematic matching of bank balances, credit statements, and payment gateways to discover discrepancies early.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-emerald-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-folder-tree text-brand-gold"></i> Financial Record Maintenance
+                  </h4>
+                  <p class="text-emerald-100/80 text-xs leading-relaxed">
+                    Structuring orderly digital archives so that audits, loan applications, and tax preparations run smoothly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- B. TAX PREPARATION & FILING (LUXURY DARK RED / BURGUNDY) -->
+        <section id="cat-tax" class="relative overflow-hidden rounded-3xl p-8 sm:p-12 border border-rose-500/20 shadow-2xl transition-all duration-300" style="background: radial-gradient(120% 120% at 0% 0%, #3e0b12 0%, #260509 55%, #150204 100%);">
+          <!-- Subtle Luxury Watermark Glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-rose-500/10 blur-3xl pointer-events-none"></div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
+            <div class="lg:col-span-5 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/15 border border-rose-400/30 text-rose-300 text-xs font-bold tracking-widest uppercase">
+                <i class="fa-solid fa-shield-halved text-xs text-brand-gold"></i> Service Category 02 · Compliance & Filing
+              </div>
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">Tax Preparation & Filing</h2>
+              <p class="text-rose-100/90 leading-relaxed text-sm sm:text-base font-light">
+                Navigating federal and local tax laws demands precision. We assist individuals, families, and business owners in compiling required documentation and filing accurate tax returns.
+              </p>
+              <div class="p-4 bg-rose-950/70 border border-rose-400/20 rounded-xl backdrop-blur-sm text-xs text-rose-100/90 leading-relaxed">
+                <strong class="font-semibold text-brand-gold block mb-1">Compliance Standard:</strong>
+                We do not promise exaggerated deductions or artificial refunds; we focus on accurate, compliant filings that withstand regulatory inspection.
+              </div>
+              <button onclick="requestServiceQuote('Tax Preparation')" class="mt-2 px-6 py-3 bg-brand-gold text-brand-navy text-sm font-bold rounded-lg hover:bg-brand-goldHover transition-all shadow-lg inline-flex items-center gap-2">
+                <span>Inquire About Tax Services</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+
+            <div class="lg:col-span-7 bg-rose-950/60 backdrop-blur-md p-8 rounded-2xl border border-rose-400/25 shadow-xl space-y-6">
+              <h3 class="font-serif text-xl font-bold text-white border-b border-rose-500/20 pb-3 flex items-center justify-between">
+                <span>Tax Filings & Preparations</span>
+                <span class="text-xs font-normal text-rose-300 uppercase tracking-widest font-sans">Statutory Compliance</span>
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-rose-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-user-tag text-brand-gold"></i> Individual Income Tax
+                  </h4>
+                  <p class="text-rose-100/80 text-xs leading-relaxed">
+                    Personal Form 1040 preparation, itemized deductions, schedule reporting, and applicable state filings.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-rose-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase text-brand-gold"></i> Business Income Tax
+                  </h4>
+                  <p class="text-rose-100/80 text-xs leading-relaxed">
+                    Tax filing support for sole proprietorships, partnerships, and small corporate structures.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-rose-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-store text-brand-gold"></i> Sales & Local Tax Reporting
+                  </h4>
+                  <p class="text-rose-100/80 text-xs leading-relaxed">
+                    Periodic filing of state and local sales taxes across NYS, CT, FL, and applicable jurisdictions.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-rose-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-house-chimney text-brand-gold"></i> Rental Income Reporting
+                  </h4>
+                  <p class="text-rose-100/80 text-xs leading-relaxed">
+                    Preparation of rental property income, depreciation reporting, and expenses for real estate investors.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- C. PAYROLL PROCESSING (LUXURY DARK GOLDEN / BRONZE) -->
+        <section id="cat-payroll" class="relative overflow-hidden rounded-3xl p-8 sm:p-12 border border-amber-500/30 shadow-2xl transition-all duration-300" style="background: radial-gradient(120% 120% at 0% 0%, #3e2e0e 0%, #291e07 55%, #181103 100%);">
+          <!-- Subtle Luxury Watermark Glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
+            <div class="lg:col-span-5 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs font-bold tracking-widest uppercase">
+                <i class="fa-solid fa-crown text-xs text-brand-gold"></i> Service Category 03 · Workforce Operations
+              </div>
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">Payroll Processing</h2>
+              <p class="text-amber-100/90 leading-relaxed text-sm sm:text-base font-light">
+                Timely, dependable payroll keeps your employees motivated and your enterprise compliant with federal, state, and local labor tax regulations.
+              </p>
+              <div class="p-4 bg-amber-950/70 border border-amber-400/25 rounded-xl backdrop-blur-sm">
+                <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-1">Punctual Schedules</p>
+                <p class="text-xs text-amber-100/80">Configured to weekly, bi-weekly, semi-monthly, or monthly compensation cycles with direct deposits.</p>
+              </div>
+              <button onclick="requestServiceQuote('Payroll Processing')" class="mt-2 px-6 py-3 bg-brand-gold text-brand-navy text-sm font-bold rounded-lg hover:bg-brand-goldHover transition-all shadow-lg inline-flex items-center gap-2">
+                <span>Inquire About Payroll</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+
+            <div class="lg:col-span-7 bg-amber-950/60 backdrop-blur-md p-8 rounded-2xl border border-amber-400/25 shadow-xl space-y-6">
+              <h3 class="font-serif text-xl font-bold text-white border-b border-amber-500/20 pb-3 flex items-center justify-between">
+                <span>Payroll Operations Scope</span>
+                <span class="text-xs font-normal text-amber-300 uppercase tracking-widest font-sans">Full Cycle Delivery</span>
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-amber-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-calculator text-brand-gold"></i> Wage & Withholding Calculations
+                  </h4>
+                  <p class="text-amber-100/80 text-xs leading-relaxed">
+                    Precise gross-to-net pay computations with all mandated state and federal withholdings.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-amber-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-vault text-brand-gold"></i> Payroll Tax Deposits
+                  </h4>
+                  <p class="text-amber-100/80 text-xs leading-relaxed">
+                    Timely deposit of payroll taxes to meet strict IRS and state tax authority timelines.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-amber-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-days text-brand-gold"></i> Quarterly & Annual Filings
+                  </h4>
+                  <p class="text-amber-100/80 text-xs leading-relaxed">
+                    Preparation and electronic submission of Forms 941, 940, and state unemployment returns.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-amber-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-id-card text-brand-gold"></i> W-2 & 1099 Form Preparation
+                  </h4>
+                  <p class="text-amber-100/80 text-xs leading-relaxed">
+                    End-of-year form creation and distribution for employees and independent 1099 contractors.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- D. FINANCIAL REPORTING & ADVISORY (LUXURY DARK BLUE / MIDNIGHT SAPPHIRE) -->
+        <section id="cat-reporting" class="relative overflow-hidden rounded-3xl p-8 sm:p-12 border border-blue-500/20 shadow-2xl transition-all duration-300" style="background: radial-gradient(120% 120% at 0% 0%, #0d274c 0%, #06152d 55%, #030a17 100%);">
+          <!-- Subtle Luxury Watermark Glow -->
+          <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
+            <div class="lg:col-span-5 space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-widest uppercase">
+                <i class="fa-solid fa-gem text-xs text-brand-gold"></i> Service Category 04 · Strategic Advisory
+              </div>
+              <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">Financial Reporting & Advisory</h2>
+              <p class="text-blue-100/90 leading-relaxed text-sm sm:text-base font-light">
+                A major service pillar at Pierre's Bookkeeping Services. We do not just record history; we provide the periodic financial statements that illuminate your operating cash flow and profitability.
+              </p>
+              <div class="p-4 bg-blue-950/70 border border-blue-400/20 rounded-xl backdrop-blur-sm">
+                <p class="text-xs font-semibold text-brand-gold uppercase tracking-wider mb-1">Management Insights</p>
+                <p class="text-xs text-blue-100/80">Empowering business leaders with clear charts, key variance explanations, and structured budgets.</p>
+              </div>
+              <button onclick="requestServiceQuote('Financial Reporting')" class="mt-2 px-6 py-3 bg-brand-gold text-brand-navy text-sm font-bold rounded-lg hover:bg-brand-goldHover transition-all shadow-lg inline-flex items-center gap-2">
+                <span>Inquire About Reporting</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+            </div>
+
+            <div class="lg:col-span-7 bg-blue-950/60 backdrop-blur-md p-8 rounded-2xl border border-blue-400/25 shadow-xl space-y-6">
+              <h3 class="font-serif text-xl font-bold text-white border-b border-blue-500/20 pb-3 flex items-center justify-between">
+                <span>Reporting Capabilities</span>
+                <span class="text-xs font-normal text-blue-300 uppercase tracking-widest font-sans">Executive Analytics</span>
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-blue-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-file-contract text-brand-gold"></i> Profit & Loss (P&L) Statements
+                  </h4>
+                  <p class="text-blue-100/80 text-xs leading-relaxed">
+                    Clear breakdowns of monthly, quarterly, and annual revenues, cost of goods, and operating expenses.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-blue-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-scale-unbalanced-flip text-brand-gold"></i> Balance Sheets
+                  </h4>
+                  <p class="text-blue-100/80 text-xs leading-relaxed">
+                    Detailed summaries of business assets, liabilities, and retained earnings to verify fiscal solvency.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-blue-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-money-bill-transfer text-brand-gold"></i> Cash-Flow Management
+                  </h4>
+                  <p class="text-blue-100/80 text-xs leading-relaxed">
+                    Monitoring liquidity cycles to ensure operational expenditures do not outpace accounts receivables.
+                  </p>
+                </div>
+
+                <div class="space-y-2 bg-black/20 p-4 rounded-xl border border-blue-500/15">
+                  <h4 class="font-semibold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-chart-pie text-brand-gold"></i> Budgeting & Forecasting
+                  </h4>
+                  <p class="text-blue-100/80 text-xs leading-relaxed">
+                    Projections and custom management reporting to plan for future hires, expansions, and equipment purchases.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 5. PUBLICATIONS & TAX NEWS PAGE VIEW       -->
+    <!-- ========================================== -->
+    <div id="page-publications" class="page-section">
+      <!-- Publications Header -->
+      <div class="bg-brand-navy text-white py-16 border-b border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Research, Insights & IRS Updates</span>
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Publications & Tax News</h1>
+          <p class="text-gray-300 max-w-3xl mt-4 text-base sm:text-lg leading-relaxed">
+            Welcome to Our Site. On this page you will find curated guidance and useful links to the latest tax news, IRS regulatory announcements, compliance milestones, and financial management briefs.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+        
+        <!-- WELCOME BANNER & TAX DIGEST INTRODUCTION WITH CREATIVE BACKGROUND IMAGE -->
+        <div class="relative overflow-hidden rounded-3xl border border-gray-300 p-8 sm:p-12 shadow-2xl group">
+          <!-- Background Image & Professional Gradient Overlay -->
+          <div class="absolute inset-0 z-0">
+            <img 
+              src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20011409.png" 
+              alt="Research, Insights and Tax News Workspace" 
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/60"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
+          </div>
+
+          <div class="relative z-10 max-w-3xl space-y-5 text-white">
+            <span class="inline-block px-3 py-1 rounded-full bg-brand-gold/20 text-brand-gold text-xs font-bold uppercase tracking-widest border border-brand-gold/40 backdrop-blur-md">
+              <i class="fa-solid fa-book-open-reader mr-1.5"></i> Welcome to Our Site
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white drop-shadow-md leading-tight">
+              Staying Informed in an Evolving Tax Landscape
+            </h2>
+            <div class="p-5 rounded-2xl bg-brand-navy/60 backdrop-blur-md border border-white/15 space-y-3">
+              <p class="text-sm sm:text-base text-gray-100 leading-relaxed font-normal">
+                Tax legislation and administrative rules change continuously at both federal and state levels. Pierre's Bookkeeping Services monitors announcements directly from the <strong class="text-white font-semibold underline decoration-brand-gold decoration-2">Internal Revenue Service (IRS)</strong> and state departments of revenue to help our clients protect deductions, avoid penalties, and plan effectively.
+              </p>
+              <p class="text-xs text-brand-gold/90 italic pt-1 border-t border-white/10 flex items-center gap-2">
+                <i class="fa-solid fa-circle-info text-brand-gold"></i>
+                <span>Below you will find synthesized briefs of recent IRS updates along with direct resource portals to official government guidance.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LATEST TAX NEWS (CURATED DIRECTLY FROM IRS.GOV) -->
+        <div class="space-y-8">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-gray-200 pb-4">
+            <div>
+              <span class="text-xs uppercase font-bold tracking-wider text-brand-gold">Federal Bulletins</span>
+              <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-navy">Latest Tax News & IRS Highlights</h2>
+            </div>
+            <a href="https://www.irs.gov/newsroom" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-navy hover:text-brand-gold transition-colors inline-flex items-center gap-1.5">
+              <span>View Official IRS Newsroom</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Article 1: Standard Mileage Rates -->
+            <article class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col justify-between hover:border-brand-gold/60 transition-all">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-[11px] text-gray-500">
+                  <span class="font-semibold text-brand-navy bg-gray-100 px-2 py-0.5 rounded">IRS Standard Rates</span>
+                  <span>Notice IR-2026-29</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy">
+                  IRS Standard Mileage Rates for Business Driving
+                </h3>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  The IRS standard mileage rate for business use of a vehicle (car, van, pickup, or panel truck) is indexed up to 72.5¢ – 76¢ per mile, reflecting vehicle maintenance and fuel adjustments. Detailed mileage logs are required to sustain deduction compliance.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
+                <span class="text-[11px] text-gray-400">Source: IRS.gov</span>
+                <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                  Read Rate Table <i class="fa-solid fa-angle-right text-[10px]"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 2: PTIN Renewal & Tax Professional Standards -->
+            <article class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col justify-between hover:border-brand-gold/60 transition-all">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-[11px] text-gray-500">
+                  <span class="font-semibold text-brand-navy bg-gray-100 px-2 py-0.5 rounded">Compliance</span>
+                  <span>IRS Bulletin</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy">
+                  PTIN Standards & Paid Preparer Certifications
+                </h3>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  The IRS reminds individuals and businesses to work exclusively with verified PTIN holders. Pierre's Bookkeeping Services maintains active certified PTIN credentials and completes continuing education to ensure filings conform with federal tax mandates.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
+                <span class="text-[11px] text-gray-400">Source: IRS Tax Pros</span>
+                <a href="https://www.irs.gov/tax-professionals/ptin-requirements-for-tax-return-preparers" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                  PTIN Overview <i class="fa-solid fa-angle-right text-[10px]"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Article 3: E-News for Small Businesses -->
+            <article class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col justify-between hover:border-brand-gold/60 transition-all">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-[11px] text-gray-500">
+                  <span class="font-semibold text-brand-navy bg-gray-100 px-2 py-0.5 rounded">Small Business</span>
+                  <span>IRIS & E-File</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy">
+                  IRS Information Returns (1099s & W-2s) & IRIS Transition
+                </h3>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                  The IRS is transitioning businesses to the Information Returns Intake System (IRIS) for electronic submissions of 1099-NEC, 1099-MISC, and contractor reports. We manage complete digital compliance for our small business clients.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
+                <span class="text-[11px] text-gray-400">Source: IRS e-News</span>
+                <a href="https://www.irs.gov/e-file-providers/information-returns-intake-system-iris-tax-year-2022-and-later" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-navy hover:text-brand-gold inline-flex items-center gap-1">
+                  IRIS System Guide <i class="fa-solid fa-angle-right text-[10px]"></i>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ESSENTIAL TAXPAYER RESOURCES & OFFICIAL DIRECT LINKS -->
+        <div class="bg-brand-navy text-white rounded-2xl p-8 sm:p-10 shadow-lg space-y-8">
+          <div>
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Direct Government Portals</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold">Useful Links & Official Tax Tools</h2>
+            <p class="text-gray-300 text-sm mt-2">
+              Access trusted official tools from the Internal Revenue Service and state departments of taxation:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+            <a href="https://www.irs.gov/refunds" target="_blank" rel="noopener noreferrer" class="p-4 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 transition-colors block space-y-2">
+              <i class="fa-solid fa-magnifying-glass-dollar text-brand-gold text-lg"></i>
+              <strong class="text-white block text-sm font-semibold">Where's My Refund?</strong>
+              <p class="text-gray-300">Track federal income tax refund status directly on IRS.gov with your SSN/ITIN and filing status.</p>
+            </a>
+
+            <a href="https://www.irs.gov/payments" target="_blank" rel="noopener noreferrer" class="p-4 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 transition-colors block space-y-2">
+              <i class="fa-solid fa-credit-card text-brand-gold text-lg"></i>
+              <strong class="text-white block text-sm font-semibold">IRS Direct Pay & Payments</strong>
+              <p class="text-gray-300">Secure electronic payment portal for individual estimated taxes, balance due, and extensions.</p>
+            </a>
+
+            <a href="https://www.irs.gov/businesses/small-businesses-self-employed" target="_blank" rel="noopener noreferrer" class="p-4 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 transition-colors block space-y-2">
+              <i class="fa-solid fa-store text-brand-gold text-lg"></i>
+              <strong class="text-white block text-sm font-semibold">Small Business Tax Center</strong>
+              <p class="text-gray-300">Employer ID numbers (EIN), business structures, self-employment tax guidelines, and forms.</p>
+            </a>
+
+            <a href="https://www.irs.gov/forms-instructions" target="_blank" rel="noopener noreferrer" class="p-4 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 transition-colors block space-y-2">
+              <i class="fa-solid fa-file-pdf text-brand-gold text-lg"></i>
+              <strong class="text-white block text-sm font-semibold">IRS Forms & Publications</strong>
+              <p class="text-gray-300">Official library for Form 1040, Schedule C, Form 941, Form 1120, and instructions.</p>
+            </a>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <span class="text-gray-300">Have questions about how new tax guidelines affect your small business?</span>
+            <button onclick="openAppointmentModal()" class="px-5 py-2.5 bg-brand-gold text-brand-navy font-bold rounded hover:bg-brand-goldHover transition-colors shrink-0">
+              Consult with a PTIN Preparer
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 6. ABOUT PAGE VIEW                         -->
+    <!-- ========================================== -->
+    <div id="page-about" class="page-section">
+      
+      <!-- About Header -->
+      <div class="bg-brand-navy text-white py-16 border-b border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Behind Pierre's Bookkeeping Services</span>
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Leadership & Experience</h1>
+          <p class="text-gray-300 max-w-2xl mt-4 text-base sm:text-lg">
+            Practical financial experience, professional attention, and a commitment to helping business owners understand their numbers.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <!-- Founder Biography Editorial Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5">
+            <div class="space-y-4">
+              <!-- Featured Founder & Principal Portrait Box -->
+              <div class="rounded-2xl overflow-hidden border-2 border-brand-gold/40 shadow-xl bg-brand-navy relative group">
+                <img 
+                  src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20004131.png" 
+                  alt="Felicia Pierre - Founder & Principal" 
+                  class="w-full h-96 sm:h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                >
+                <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-brand-navy via-brand-navy/70 to-transparent">
+                  <p class="text-xs font-bold uppercase tracking-wider text-brand-gold">Felicia Pierre</p>
+                  <p class="text-xs text-white">Founder & Principal · Pierre's Bookkeeping Services, LLC</p>
+                </div>
+              </div>
+              
+              <!-- Complementary Genuine Office Workspace Photos in Dual Strip -->
+              <div class="grid grid-cols-2 gap-3">
+                <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                  <img 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469085795_1090186715844831_4958646103603086772_n.jpg" 
+                    alt="Records management workstation" 
+                    class="w-full h-28 object-cover"
+                  >
+                </div>
+                <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                  <img 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg" 
+                    alt="Orlando office suite entry" 
+                    class="w-full h-28 object-cover"
+                  >
+                </div>
+              </div>
+
+              <p class="text-[11px] text-gray-500 italic text-center">
+                Executive suite & consultation facilities located at 20 N. Orange Ave, Suite 1100, Orlando, FL.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Founder & Principal</span>
+              <h2 class="font-serif text-3xl font-bold text-brand-navy mt-1">Felicia Pierre</h2>
+              <p class="text-sm font-medium text-gray-500">Financial Practice Specialist & Accounting Principal</p>
+            </div>
+
+            <div class="prose text-gray-600 space-y-4 text-sm sm:text-base leading-relaxed">
+              <p>
+                Felicia Pierre has dedicated her professional career to bookkeeping and accounting operations since 2007. Having navigated diverse financial environments, she established <strong>Pierre's Bookkeeping Services, LLC</strong> in 2015 to deliver disciplined, personalized financial attention to small and medium enterprises.
+              </p>
+              <p>
+                Throughout her career, Felicia has specialized in bringing order to disorganized ledgers, overseeing complex payroll requirements, managing multi-tier sales tax reporting, and ensuring individual and corporate tax filings comply with evolving statutory guidelines.
+              </p>
+              <p>
+                Her approach centers on clarity rather than jargon. Clients are not handed confusing spreadsheets; they receive actionable explanations of their cash flow, profit margins, and tax obligations so they can run their businesses with certainty.
+              </p>
+            </div>
+
+            <!-- Professional Credentials (Clearly noting draft confirmation status) -->
+            <div class="p-6 bg-brand-cream border border-gray-200 rounded-xl space-y-4">
+              <div class="flex items-center justify-between border-b border-gray-200 pb-2">
+                <h3 class="font-serif text-base font-bold text-brand-navy">Professional Credentials & Education</h3>
+                <span class="text-[10px] font-semibold text-amber-900 bg-amber-100 px-2 py-0.5 rounded">Pending Pre-Launch Verification</span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                  </div>
+                  <div>
+                    <strong class="font-semibold text-brand-navy block">Master of Science in Accounting (MSA)</strong>
+                    <span class="text-xs text-gray-500">Advanced study in accounting principles and auditing</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs">
+                    <i class="fa-solid fa-certificate"></i>
+                  </div>
+                  <div>
+                    <strong class="font-semibold text-brand-navy block">Enrolled Agent (EA)</strong>
+                    <span class="text-xs text-gray-500">Federal tax authority practitioner representation</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                  </div>
+                  <div>
+                    <strong class="font-semibold text-brand-navy block">Practicing Since 2007</strong>
+                    <span class="text-xs text-gray-500">Nearly two decades of bookkeeping leadership</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs">
+                    <i class="fa-solid fa-building-shield"></i>
+                  </div>
+                  <div>
+                    <strong class="font-semibold text-brand-navy block">LLC Established 2015</strong>
+                    <span class="text-xs text-gray-500">Firm incorporated in Florida with regional reach</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-[11px] text-gray-500 italic pt-2">
+                * Note: Credential details above reflect public professional registry listings and require formal owner verification prior to public website launch.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- HOW WE SUPPORT YOUR BUSINESS (Elegantly replacing fake employee headshots) -->
+        <div class="mt-20 pt-16 border-t border-gray-200">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Operating Structure</span>
+            <h2 class="font-serif text-3xl font-bold text-brand-navy mt-1">How We Support Your Enterprise</h2>
+            <p class="text-gray-600 text-sm sm:text-base mt-2">
+              Our firm is organized around dedicated functional disciplines so every aspect of your financial operations receives experienced oversight.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm space-y-3">
+              <div class="w-10 h-10 rounded-lg bg-gray-100 text-brand-navy flex items-center justify-center">
+                <i class="fa-solid fa-book text-brand-gold"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy">Bookkeeping & Ledger Support</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Ongoing classification of receipts, vendor disbursement verification, monthly account reconciliation, and balance accuracy.
+              </p>
+              <span class="text-[11px] font-semibold text-gray-400 block pt-2">Operational Role</span>
+            </div>
+
+            <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm space-y-3">
+              <div class="w-10 h-10 rounded-lg bg-gray-100 text-brand-navy flex items-center justify-center">
+                <i class="fa-solid fa-hand-holding-dollar text-brand-gold"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy">Payroll & Tax Compliance</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Payroll execution, timely payroll tax remittance, quarterly 941 filings, and systematic year-end tax documentation.
+              </p>
+              <span class="text-[11px] font-semibold text-gray-400 block pt-2">Compliance Role</span>
+            </div>
+
+            <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm space-y-3">
+              <div class="w-10 h-10 rounded-lg bg-gray-100 text-brand-navy flex items-center justify-center">
+                <i class="fa-solid fa-chart-column text-brand-gold"></i>
+              </div>
+              <h3 class="font-serif text-lg font-bold text-brand-navy">Financial Reporting Support</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Management financial statements, balance sheet reconciliations, and budgeting reviews to guide executive decisions.
+              </p>
+              <span class="text-[11px] font-semibold text-gray-400 block pt-2">Advisory Role</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 7. CONTACT & OFFICES PAGE VIEW             -->
+    <!-- ========================================== -->
+    <div id="page-contact" class="page-section">
+      
+      <!-- Contact Header -->
+      <div class="bg-brand-navy text-white py-16 border-b border-brand-gold/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Direct Communications</span>
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Contact & Office Locations</h1>
+          <p class="text-gray-300 max-w-2xl mt-4 text-base sm:text-lg">
+            Schedule an appointment with Felicia Pierre. In-person office visits are arranged strictly by advance appointment. Remote consultations available nationwide.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- LEFT COLUMN: CONTACT DETAILS & OFFICES -->
+          <div class="lg:col-span-5 space-y-8">
+            
+            <!-- Direct Channels -->
+            <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm space-y-5">
+              <h2 class="font-serif text-xl font-bold text-brand-navy border-b border-gray-100 pb-3">Get in Touch</h2>
+              
+              <div class="space-y-4 text-sm">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-lg bg-brand-cream text-brand-navy border border-gray-200 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-phone text-brand-gold"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider block">Primary Telephone</span>
+                    <a href="tel:2038897272" class="text-base font-bold text-brand-navy hover:text-brand-gold transition-colors">
+                      203-889-7272
+                    </a>
+                    <span class="text-xs text-gray-500 block">Direct route to schedule appointments</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-lg bg-brand-cream text-brand-navy border border-gray-200 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-envelope text-brand-gold"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider block">Direct Email</span>
+                    <a href="mailto:felicia@pierresbookkeeping.com" class="text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors break-all">
+                      felicia@pierresbookkeeping.com
+                    </a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-lg bg-brand-cream text-brand-navy border border-gray-200 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-clock text-brand-gold"></i>
+                  </div>
+                  <div>
+                    <span class="text-xs text-gray-500 font-semibold uppercase tracking-wider block">Office Hours</span>
+                    <p class="text-sm font-semibold text-brand-navy">Monday – Friday: 9:00 AM – 5:00 PM</p>
+                    <span class="text-xs font-semibold text-amber-800 bg-amber-100 px-2 py-0.5 rounded inline-block mt-1">
+                      By Appointment Only
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- OFFICES & LOCATIONS ARCHITECTURE -->
+            <div class="space-y-4">
+              <h2 class="font-serif text-xl font-bold text-brand-navy">Confirmed Office Facilities</h2>
+              
+              <!-- MAIN OFFICE (Confirmed Downtown Orlando HQ) -->
+              <div class="p-6 bg-white rounded-xl border-2 border-brand-navy shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded bg-brand-navy text-white text-[10px] font-bold uppercase tracking-wider">Main Downtown Corporate Office</span>
+                  <span class="text-xs text-green-700 font-semibold"><i class="fa-solid fa-check-circle"></i> Confirmed Address</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy">Downtown Orlando Executive Suite</h3>
+                <p class="text-sm text-gray-700 font-medium">
+                  20 North Orange Avenue<br>
+                  Suite 1100<br>
+                  Orlando, FL 32801
+                </p>
+                <div class="pt-2 text-xs text-gray-500">
+                  Located in the heart of downtown Orlando. Please phone ahead to confirm an appointment before arrival.
+                </div>
+              </div>
+
+              <!-- MILLENIA MALL ORLANDO LOCATION -->
+              <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded bg-brand-gold text-brand-navy text-[10px] font-bold uppercase tracking-wider">New Facility Location</span>
+                  <span class="text-xs text-green-700 font-semibold"><i class="fa-solid fa-check-circle"></i> Active Location</span>
+                </div>
+                <h3 class="font-serif text-lg font-bold text-brand-navy">Millenia Mall Location, Orlando</h3>
+                <p class="text-sm text-gray-700 font-medium">
+                  Millenia Mall Area<br>
+                  Orlando, FL
+                </p>
+                <div class="pt-2 text-xs text-gray-500">
+                  Convenient service location for small businesses and individual clients. Consultations scheduled by advance appointment.
+                </div>
+              </div>
+
+              <!-- SECOND CONFIRMED OFFICE (Preserved exactly as supplied, flagged for pre-launch city/zip confirmation) -->
+              <div class="p-6 bg-gray-50 rounded-xl border border-gray-300 space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2 py-0.5 rounded bg-gray-200 text-gray-800 text-[10px] font-bold uppercase tracking-wider">Additional Registered Address</span>
+                  <span class="text-[10px] text-amber-800 bg-amber-100 px-2 py-0.5 rounded font-semibold">City / ZIP Confirmation Pending</span>
+                </div>
+                <h3 class="font-serif text-base font-bold text-brand-navy">Suite 500 Office</h3>
+                <p class="text-sm text-gray-700 font-medium font-mono">
+                  618 South St<br>
+                  Suite 500
+                </p>
+                <p class="text-xs text-amber-900 bg-amber-50 p-2 rounded border border-amber-200">
+                  <i class="fa-solid fa-circle-exclamation mr-1"></i> Address recorded as supplied. City, state, and postal code are pending formal confirmation with business principal prior to public map indexing.
+                </p>
+              </div>
+
+              <!-- SERVICE COVERAGE MARKETS -->
+              <div class="p-6 bg-brand-cream rounded-xl border border-gray-200 space-y-3">
+                <h3 class="font-serif text-base font-bold text-brand-navy">Service Coverage Areas</h3>
+                <p class="text-xs text-gray-600">
+                  Pierre's Bookkeeping Services actively serves small businesses and individual taxpayers in:
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs font-semibold text-brand-navy">
+                  <span class="px-3 py-1 bg-white rounded border border-gray-200"><i class="fa-solid fa-location-dot text-brand-gold mr-1"></i> Orlando, FL, US</span>
+                  <span class="px-3 py-1 bg-white rounded border border-gray-200"><i class="fa-solid fa-location-dot text-brand-gold mr-1"></i> New York, NY, US</span>
+                  <span class="px-3 py-1 bg-white rounded border border-gray-200"><i class="fa-solid fa-location-dot text-brand-gold mr-1"></i> New Haven, CT, US</span>
+                  <span class="px-3 py-1 bg-white rounded border border-gray-200"><i class="fa-solid fa-earth-americas text-brand-gold mr-1"></i> Nationwide Remote</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: CONTACT & CONSULTATION INQUIRY FORM -->
+          <div class="lg:col-span-7">
+            <div class="bg-white p-8 sm:p-10 rounded-2xl border border-gray-200 shadow-lg">
+              <div class="mb-6">
+                <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Online Request</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-navy mt-1">Request a Consultation</h2>
+                <p class="text-gray-600 text-sm mt-2">
+                  Complete the inquiry form below to initiate contact. Our office will respond to schedule a discussion.
+                </p>
+              </div>
+
+              <!-- Interactive Form -->
+              <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                
+                <div>
+                  <label for="fullName" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+                    Full Name <span class="text-red-500">*</span>
+                  </label>
+                  <input 
+                    type="text" 
+                    id="fullName" 
+                    required 
+                    placeholder="e.g. Johnathan Davis"
+                    class="w-full px-4 py-3 rounded border border-gray-300 text-sm focus:border-brand-navy focus:ring-1 focus:ring-brand-navy focus:outline-none transition"
+                  >
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="emailAddress" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+                      Email Address <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="email" 
+                      id="emailAddress" 
+                      required 
+                      placeholder="john@yourbusiness.com"
+                      class="w-full px-4 py-3 rounded border border-gray-300 text-sm focus:border-brand-navy focus:ring-1 focus:ring-brand-navy focus:outline-none transition"
+                    >
+                  </div>
+                  <div>
+                    <label for="phoneNumber" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+                      Phone Number <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="tel" 
+                      id="phoneNumber" 
+                      required 
+                      placeholder="(203) 555-0199"
+                      class="w-full px-4 py-3 rounded border border-gray-300 text-sm focus:border-brand-navy focus:ring-1 focus:ring-brand-navy focus:outline-none transition"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label for="serviceInterest" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+                    Service Interested In <span class="text-red-500">*</span>
+                  </label>
+                  <select 
+                    id="serviceInterest" 
+                    required 
+                    class="w-full px-4 py-3 rounded border border-gray-300 text-sm focus:border-brand-navy focus:ring-1 focus:ring-brand-navy focus:outline-none transition bg-white"
+                  >
+                    <option value="" disabled selected>Select a primary financial service...</option>
+                    <option value="Bookkeeping & Accounting">Bookkeeping & Accounting</option>
+                    <option value="Tax Preparation & Filing">Tax Preparation & Filing</option>
+                    <option value="Payroll Processing">Payroll Processing</option>
+                    <option value="Financial Reporting & Advisory">Financial Reporting & Advisory</option>
+                    <option value="Other Financial Inquiry">Other General Inquiry</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="messageBody" class="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-1">
+                    Brief Summary of Needs <span class="text-red-500">*</span>
+                  </label>
+                  <textarea 
+                    id="messageBody" 
+                    rows="4" 
+                    required 
+                    placeholder="Please tell us a bit about your business structure, tax filing status, or bookkeeping volume..."
+                    class="w-full px-4 py-3 rounded border border-gray-300 text-sm focus:border-brand-navy focus:ring-1 focus:ring-brand-navy focus:outline-none transition"
+                  ></textarea>
+                </div>
+
+                <!-- CRITICAL FINANCIAL SECURITY DISCLAIMER -->
+                <div class="p-3.5 bg-gray-50 border border-gray-200 rounded text-xs text-gray-600 flex items-start gap-3">
+                  <i class="fa-solid fa-lock text-brand-gold mt-0.5 text-sm"></i>
+                  <div>
+                    <strong class="font-semibold text-brand-navy block">Security & Privacy Protocol:</strong>
+                    Do not transmit Social Security Numbers, Bank Account Information, Employer Identification Numbers (EIN), or confidential financial files through this general initial inquiry form. Secure channels are coordinated during appointment onboarding.
+                  </div>
+                </div>
+
+                <button 
+                  type="submit" 
+                  id="submitBtn"
+                  class="w-full py-4 bg-brand-navy text-white text-base font-bold rounded hover:bg-brand-slate transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                >
+                  <span>Request a Consultation</span>
+                  <i class="fa-solid fa-paper-plane text-xs text-brand-gold"></i>
+                </button>
+              </form>
+
+              <!-- Demonstration Notice Box for Presentation Mode -->
+              <div id="formDemoFeedback" class="hidden mt-6 p-4 rounded-lg bg-green-50 border border-green-200 text-green-900 text-xs leading-relaxed">
+                <div class="flex items-center gap-2 font-bold mb-1">
+                  <i class="fa-solid fa-circle-check text-green-600 text-sm"></i>
+                  <span>Demonstration Mode Submission Received</span>
+                </div>
+                <p>
+                  Thank you! Your simulated consultation inquiry has been logged locally for this website concept review. In the live production site, this triggers a direct notification to <strong>felicia@pierresbookkeeping.com</strong> and pre-fills your appointment record.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- APPOINTMENT MODAL (HONORING CALL-TO-SCHEDULE PROTOCOL) -->
+  <div id="appointmentModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-gray-200 relative animate-fade-in">
+      <button onclick="closeAppointmentModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-2" aria-label="Close Appointment Modal">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="text-left space-y-4">
+        <div class="w-12 h-12 rounded-full bg-brand-cream border border-brand-gold/30 text-brand-navy flex items-center justify-center text-xl">
+          <i class="fa-regular fa-calendar-check text-brand-gold"></i>
+        </div>
+        
+        <h3 class="font-serif text-2xl font-bold text-brand-navy">Schedule an Appointment</h3>
+        
+        <p class="text-sm text-gray-600 leading-relaxed">
+          Pierre's Bookkeeping Services schedules consultations directly via telephone or consultation inquiry to ensure every client is matched with the appropriate time and attention.
+        </p>
+
+        <!-- Direct Action Card -->
+        <div class="p-5 bg-brand-cream border border-gray-200 rounded-xl space-y-3">
+          <p class="text-xs uppercase font-bold tracking-wider text-gray-500">Fastest Booking Route</p>
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-lg font-bold text-brand-navy">203-889-7272</p>
+              <p class="text-xs text-gray-500">Monday–Friday, 9:00 AM – 5:00 PM</p>
+            </div>
+            <a href="tel:2038897272" class="px-4 py-2 bg-brand-navy text-white text-xs font-bold rounded hover:bg-brand-slate transition-colors flex items-center gap-2">
+              <i class="fa-solid fa-phone text-brand-gold"></i> Call Now
+            </a>
+          </div>
+        </div>
+
+        <div class="text-xs text-gray-500 space-y-2">
+          <p class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-brand-gold"></i>
+            <span>Main Office: 20 N Orange Ave, Suite 1100, Orlando, FL 32801</span>
+          </p>
+          <p class="flex items-center gap-2">
+            <i class="fa-solid fa-user-clock text-brand-gold"></i>
+            <span>Visits strictly by advance appointment. No unscheduled walk-ins.</span>
+          </p>
+        </div>
+
+        <div class="pt-3 border-t border-gray-100 flex gap-3">
+          <button onclick="closeAppointmentModal(); navigateTo('contact');" class="w-full py-2.5 bg-gray-100 hover:bg-gray-200 text-brand-navy text-xs font-bold rounded transition-colors">
+            Or Complete Online Form
+          </button>
+          <button onclick="closeAppointmentModal()" class="w-full py-2.5 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 text-xs font-semibold rounded transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRE-LAUNCH VERIFICATION AUDIT MODAL (FOR CLIENT PRESENTATION TRANSPARENCY) -->
+  <div id="auditModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 modal-backdrop" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-gray-200 relative max-h-[90vh] overflow-y-auto">
+      <button onclick="toggleAuditModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-2" aria-label="Close Verification Modal">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-bold text-brand-navy">Pre-Launch Verification Checklist</h3>
+            <p class="text-xs text-gray-500">Concise items identified for Felicia Pierre's confirmation before public deployment</p>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs text-gray-700">
+          <div class="p-3 bg-amber-50 rounded border border-amber-200">
+            <strong class="text-amber-900 block font-semibold">1. Secondary Office Address (618 South St, Suite 500)</strong>
+            <span>Preserved exactly as supplied. Missing city, state, and ZIP code must be confirmed before adding to live map directory listings.</span>
+          </div>
+
+          <div class="p-3 bg-gray-50 rounded border border-gray-200">
+            <strong class="text-brand-navy block font-semibold">2. Professional Credentials & Licensing</strong>
+            <span>Enrolled Agent (EA) credential and Master of Science in Accounting (MSA) gathered from public records should be formally validated for exact display wording.</span>
+          </div>
+
+          <div class="p-3 bg-gray-50 rounded border border-gray-200">
+            <strong class="text-brand-navy block font-semibold">3. Client Endorsements & Testimonials</strong>
+            <span>Testimonial container currently uses an approved transparent placeholder awaiting owner-provided quotations from verified clients.</span>
+          </div>
+
+          <div class="p-3 bg-gray-50 rounded border border-gray-200">
+            <strong class="text-brand-navy block font-semibold">4. Appointment Scheduling Process</strong>
+            <span>Currently configured to the established direct telephone line (203-889-7272) as instructed. If an automated calendar tool (Calendly, Acuity) is preferred, it can be integrated seamlessly.</span>
+          </div>
+        </div>
+
+        <div class="pt-4 flex justify-end">
+          <button onclick="toggleAuditModal()" class="px-5 py-2 bg-brand-navy text-white text-xs font-semibold rounded hover:bg-brand-slate transition-colors">
+            Close Checklist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECURRING 15-SECOND EXECUTIVE CONSULTATION CTA DOCK -->
+  <aside id="timedCtaToast" class="fixed bottom-5 right-5 z-40 max-w-sm sm:max-w-md w-[calc(100vw-2.5rem)] translate-y-32 opacity-0 pointer-events-none transition-all duration-500 ease-out shadow-2xl rounded-2xl overflow-hidden border-2 border-brand-gold/50 bg-brand-navy text-white" role="region" aria-label="Consultation Advisory Invitation">
+    <!-- Subtle top gold accent bar with animation -->
+    <div class="h-1 bg-gradient-to-r from-brand-gold via-amber-200 to-brand-gold"></div>
+
+    <div class="p-4 sm:p-5 relative">
+      <!-- Dismiss cross -->
+      <button onclick="dismissTimedCta()" class="absolute top-3.5 right-3.5 text-gray-400 hover:text-white transition-colors p-1" aria-label="Dismiss Notification">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+
+      <div class="flex items-start gap-3.5 pr-6">
+        <!-- Prestige Icon Container -->
+        <div class="w-10 h-10 rounded-xl bg-white/10 border border-brand-gold/40 flex items-center justify-center shrink-0 text-brand-gold shadow-sm mt-0.5">
+          <i class="fa-solid fa-shield-halved text-base"></i>
+        </div>
+
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-gold font-sans">
+              Executive Consultation Available
+            </span>
+          </div>
+          <h4 id="timedCtaTitle" class="font-serif font-bold text-sm sm:text-base text-white leading-tight">
+            Need Expert Financial Direction?
+          </h4>
+          <p id="timedCtaDesc" class="text-xs text-gray-300 leading-relaxed font-light">
+            Schedule a personalized session with Felicia Pierre, MSA, EA for your bookkeeping, tax filing, or payroll needs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Action Buttons Matching Brand Standards -->
+      <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <button onclick="openAppointmentModal(); hideTimedCta();" class="px-3.5 py-2 bg-brand-gold text-brand-navy text-xs font-bold rounded-lg hover:bg-brand-goldHover transition-colors shadow-sm inline-flex items-center gap-1.5">
+            <i class="fa-regular fa-calendar-check text-[11px]"></i>
+            <span>Schedule Appointment</span>
+          </button>
+          <a href="tel:2038897272" class="px-3 py-2 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold rounded-lg transition-colors inline-flex items-center gap-1.5 border border-white/15">
+            <i class="fa-solid fa-phone text-brand-gold text-[10px]"></i>
+            <span class="hidden sm:inline">203-889-7272</span>
+            <span class="sm:hidden">Call</span>
+          </a>
+        </div>
+        <span class="text-[10px] text-gray-400 italic">Mon–Fri: By Appt</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SITE FOOTER -->
+  <footer class="bg-brand-navy text-gray-300 pt-16 pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand & Logo in Footer (Native presentation, no mask) -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <img 
+              src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/302105896_496864902442421_4562787021728387486_n.png" 
+              alt="Pierre's Bookkeeping Services, LLC" 
+              class="h-14 w-auto object-contain bg-white/5 p-1 rounded"
+            >
+            <div>
+              <span class="font-serif font-bold text-lg text-white block">PIERRE'S</span>
+              <span class="text-[10px] tracking-widest text-brand-gold uppercase font-semibold">Bookkeeping Services, LLC</span>
+            </div>
+          </div>
+          <p class="text-xs text-gray-400 max-w-sm leading-relaxed">
+            Professional financial support, bookkeeping, payroll, and tax preparation designed to bring clarity to your numbers and confidence to your business.
+          </p>
+          <div class="flex items-center gap-4 pt-2">
+            <a href="https://www.facebook.com/PierresPBKS" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded bg-white/10 hover:bg-brand-gold hover:text-brand-navy text-white flex items-center justify-center transition-colors text-sm" aria-label="Pierre's Bookkeeping on Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/felicia-pierre-807a6b5b/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded bg-white/10 hover:bg-brand-gold hover:text-brand-navy text-white flex items-center justify-center transition-colors text-sm" aria-label="Felicia Pierre on LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <button onclick="toggleAuditModal()" class="text-xs text-brand-gold hover:underline flex items-center gap-1.5 ml-2">
+              <i class="fa-solid fa-list-check text-xs"></i> Pre-Launch Checklist
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-brand-gold">Navigation</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#home" onclick="navigateTo('home'); return false;" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="#whats-new" onclick="navigateTo('whats-new'); return false;" class="hover:text-white transition-colors">What's New! (New Office)</a></li>
+            <li><a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="hover:text-white transition-colors">Practice Areas (Tax Filing)</a></li>
+            <li><a href="#services" onclick="navigateTo('services'); return false;" class="hover:text-white transition-colors">All Services</a></li>
+            <li><a href="#publications" onclick="navigateTo('publications'); return false;" class="hover:text-white transition-colors">Publications & Tax News</a></li>
+            <li><a href="#about" onclick="navigateTo('about'); return false;" class="hover:text-white transition-colors">About Felicia Pierre</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact'); return false;" class="hover:text-white transition-colors">Contact & Offices</a></li>
+            <li><button onclick="openAppointmentModal()" class="text-brand-gold hover:underline">Schedule an Appointment</button></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-brand-gold">Capabilities</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="hover:text-white transition-colors">NYS, CT & FL Sales Tax</a></li>
+            <li><a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="hover:text-white transition-colors">Annual Rental Income Reports</a></li>
+            <li><a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="hover:text-white transition-colors">Personal Property Tax Filings</a></li>
+            <li><a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="hover:text-white transition-colors">Payroll (ADP, Paychex, Sage)</a></li>
+            <li><a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="hover:text-white transition-colors">Advisory & Cash Management</a></li>
+            <li><a href="#services" onclick="navigateTo('services'); return false;" class="hover:text-white transition-colors">General Ledger Bookkeeping</a></li>
+          </ul>
+        </div>
+
+        <!-- Headquarters & Hours -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-widest text-brand-gold">Main Office</h4>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            20 North Orange Avenue<br>
+            Suite 1100<br>
+            Orlando, FL 32801
+          </p>
+          <p class="text-xs text-gray-400">
+            <strong class="text-white block">Hours:</strong>
+            Mon–Fri: 9:00 AM – 5:00 PM<br>
+            <span class="text-brand-gold">By Appointment Only</span>
+          </p>
+          <p class="text-xs text-gray-400 pt-1">
+            <strong class="text-white">Phone:</strong> <a href="tel:2038897272" class="hover:text-brand-gold">203-889-7272</a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Legal & Disclaimers -->
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>© 2026 Pierre's Bookkeeping Services, LLC. All rights reserved.</p>
+        <div class="flex flex-wrap items-center gap-6">
+          <span>Orlando, FL · New York, NY · New Haven, CT</span>
+          <span>Concept Presentation Version</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SCRIPTING FOR SPA NAVIGATION, FORMS, MODALS, & GALLERY -->
+  <script>
+    // SPA PAGE NAVIGATION CONTROLLER
+    function navigateTo(pageId) {
+      // Hide all page sections
+      const pages = document.querySelectorAll('.page-section');
+      pages.forEach(p => {
+        p.classList.remove('active');
+      });
+
+      // Show targeted page
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) {
+        targetPage.classList.add('active');
+      }
+
+      // Update Header active state
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-target') === pageId) {
+          link.classList.add('text-brand-navy', 'border-b-2', 'border-brand-gold', 'font-semibold');
+          link.classList.remove('text-gray-700');
+        } else {
+          link.classList.remove('text-brand-navy', 'border-b-2', 'border-brand-gold', 'font-semibold');
+          link.classList.add('text-gray-700');
+        }
+      });
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Update browser history hash without reload
+      if (history.pushState) {
+        history.pushState(null, null, '#' + pageId);
+      }
+    }
+
+    // MOBILE MENU TOGGLE
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    }
+
+    // HERO OFFICE PHOTO CHANGER
+    function setHeroOffice(imageUrl) {
+      const heroImg = document.getElementById('heroOfficeImage');
+      if (heroImg) {
+        heroImg.style.opacity = '0.4';
+        setTimeout(() => {
+          heroImg.src = imageUrl;
+          heroImg.style.opacity = '1';
+        }, 150);
+      }
+    }
+
+    // APPOINTMENT MODAL CONTROLLERS
+    function openAppointmentModal() {
+      const modal = document.getElementById('appointmentModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAppointmentModal() {
+      const modal = document.getElementById('appointmentModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // AUDIT CHECKLIST MODAL
+    function toggleAuditModal() {
+      const modal = document.getElementById('auditModal');
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // SERVICE QUOTE QUICK INITIATOR
+    function requestServiceQuote(serviceName) {
+      navigateTo('contact');
+      setTimeout(() => {
+        const select = document.getElementById('serviceInterest');
+        if (select) {
+          for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value.includes(serviceName) || select.options[i].text.includes(serviceName)) {
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+        const nameInput = document.getElementById('fullName');
+        if (nameInput) nameInput.focus();
+      }, 200);
+    }
+
+    // CONTACT FORM SUBMISSION HANDLER (SAFE DEMONSTRATION WITH PROPER VALIDATION)
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const submitBtn = document.getElementById('submitBtn');
+      const originalText = submitBtn.innerHTML;
+
+      // Disable button & show spinner state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing Request...';
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        
+        // Show safe demonstration response
+        const feedback = document.getElementById('formDemoFeedback');
+        feedback.classList.remove('hidden');
+        
+        // Clear inputs safely
+        document.getElementById('contactForm').reset();
+      }, 700);
+    }
+
+    // HASH ROUTING SYNCHRONIZER
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && ['home', 'whats-new', 'practice-areas', 'services', 'publications', 'about', 'contact'].includes(hash)) {
+        navigateTo(hash);
+      }
+    });
+
+    // RECURRING 15-SECOND PROFESSIONAL CTA CONTROLLER
+    const ctaMessages = [
+      {
+        title: "Looking for Clean, Dependable Books?",
+        desc: "Schedule a discussion with Felicia Pierre to structure audit-ready ledgers and reconcile accounts."
+      },
+      {
+        title: "Income & Sales Tax Preparation",
+        desc: "Individual & small business returns filed accurately. Certified PTIN preparers with remote and in-office service."
+      },
+      {
+        title: "Workforce & Multi-State Payroll",
+        desc: "Hands-on processing, timely tax deposits, and W-2/1099 compliance across NY, CT, and FL."
+      },
+      {
+        title: "Executive Internal Reporting",
+        desc: "Customized monthly P&Ls, balance sheets, and cash flow forecasting to drive profitable business decisions."
+      }
+    ];
+
+    let ctaIndex = 0;
+    let ctaIntervalTimer = null;
+
+    function showTimedCta() {
+      const toast = document.getElementById('timedCtaToast');
+      const titleEl = document.getElementById('timedCtaTitle');
+      const descEl = document.getElementById('timedCtaDesc');
+
+      if (!toast) return;
+
+      // Cycle message content intelligently
+      const current = ctaMessages[ctaIndex % ctaMessages.length];
+      if (titleEl) titleEl.textContent = current.title;
+      if (descEl) descEl.textContent = current.desc;
+      ctaIndex++;
+
+      // Reveal toast with smooth slide and fade - stays until user dismisses
+      toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    }
+
+    function hideTimedCta() {
+      const toast = document.getElementById('timedCtaToast');
+      if (toast) {
+        toast.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+      }
+    }
+
+    function dismissTimedCta() {
+      // User manually cancels/closes it
+      hideTimedCta();
+      // Restart the 15-second timer so it reappears 15 seconds after dismissal
+      startRecurringCtaCycle();
+    }
+
+    function startRecurringCtaCycle() {
+      // Trigger recurring prompt every 15 seconds (15,000ms)
+      if (ctaIntervalTimer) clearInterval(ctaIntervalTimer);
+      ctaIntervalTimer = setInterval(() => {
+        // Only trigger if an active modal isn't open and the toast is not already open
+        const aptModal = document.getElementById('appointmentModal');
+        const auditModal = document.getElementById('auditModal');
+        const toast = document.getElementById('timedCtaToast');
+        
+        const isAptOpen = aptModal && !aptModal.classList.contains('hidden');
+        const isAuditOpen = auditModal && !auditModal.classList.contains('hidden');
+        const isToastAlreadyOpen = toast && toast.classList.contains('opacity-100');
+
+        if (!isAptOpen && !isAuditOpen && !isToastAlreadyOpen) {
+          showTimedCta();
+        }
+      }, 15000);
+    }
+
+    // Initialize 15-second timer on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      startRecurringCtaCycle();
+    });
+
+    // Close modals on Esc key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAppointmentModal();
+        const audit = document.getElementById('auditModal');
+        if (!audit.classList.contains('hidden')) toggleAuditModal();
+        dismissTimedCta();
+      }
+    });
+  </script>
+
+</body>
+</html>
