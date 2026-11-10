@@ -87,12 +87,88 @@
       background-color: rgba(10, 25, 47, 0.78);
       backdrop-filter: blur(4px);
     }
+
+    /* Full-bleed YouTube background video scaling */
+    .yt-bg-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      min-width: 177.77vh; /* 16:9 ratio guarantee */
+      min-height: 56.25vw; /* 16:9 ratio guarantee */
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    /* Transparent / Scrolled Header Transitions */
+    .header-transparent {
+      background-color: rgba(10, 25, 47, 0.85) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      border-color: rgba(197, 168, 128, 0.25) !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .header-scrolled {
+      background-color: rgba(10, 25, 47, 0.98) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      border-color: rgba(197, 168, 128, 0.35) !important;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45) !important;
+    }
+
+    /* ==================================================== */
+    /* HIGH PERFORMANCE SCROLL SLIDE-IN & REVEAL SYSTEM     */
+    /* ==================================================== */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-scale-in {
+      opacity: 0;
+      transform: scale(0.94);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    /* Active visible state triggered by IntersectionObserver */
+    .revealed {
+      opacity: 1 !important;
+      transform: translate(0, 0) scale(1) !important;
+    }
+
+    /* Staggered delay utilities for child grids */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-150 { transition-delay: 150ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-250 { transition-delay: 250ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+
   </style>
 </head>
-<body class="flex flex-col min-h-screen selection:bg-brand-gold selection:text-brand-navy">
+<body class="flex flex-col min-h-screen selection:bg-brand-gold selection:text-brand-navy relative">
 
-  <!-- TOP DISCLOSURE & PRE-FLIGHT VERIFICATION NOTICE BAR -->
-  <div class="bg-brand-navy text-gray-300 text-xs py-2 px-4 border-b border-white/10 hidden md:block">
+  <!-- TOP DISCLOSURE & PRE-FLIGHT VERIFICATION NOTICE BAR (Ultra-clean translucent luxury style) -->
+  <div class="bg-brand-navy/90 backdrop-blur-md text-gray-300 text-xs py-2 px-4 border-b border-white/10 hidden md:block relative z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-4">
         <span class="inline-flex items-center gap-1.5 text-brand-gold">
@@ -114,70 +190,70 @@
     </div>
   </div>
 
-  <!-- STICKY SITE HEADER -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 transition-all duration-200 shadow-sm">
+  <!-- STICKY SITE HEADER: Fully Transparent & Sleek with Dynamic Glassmorphism on Scroll -->
+  <header id="siteHeader" class="sticky top-0 z-40 bg-brand-navy/90 backdrop-blur-md border-b border-brand-gold/25 transition-all duration-300 shadow-md">
     <div class="max-w-[1720px] mx-auto px-3 sm:px-4 lg:px-6 h-20 flex items-center justify-between gap-2 xl:gap-4">
       
-      <!-- LOGO & BRAND NAME: Compact, zero-wrap single-line container -->
+      <!-- LOGO & BRAND NAME: Compact, zero-wrap single-line container with crisp light branding -->
       <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-2 xl:gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded py-1">
         <img 
           src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/302105896_496864902442421_4562787021728387486_n.png" 
           alt="Pierre's Bookkeeping Services, LLC Logo" 
-          class="h-10 xl:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+          class="h-10 xl:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02] filter drop-shadow-sm"
           loading="eager"
         >
         <div class="flex flex-col text-left leading-none">
-          <span class="font-serif font-bold text-base xl:text-lg tracking-wide text-brand-navy whitespace-nowrap">PIERRE'S</span>
-          <span class="text-[9px] xl:text-[10px] tracking-[0.16em] font-semibold text-gray-500 uppercase whitespace-nowrap">Bookkeeping Services</span>
+          <span class="font-serif font-bold text-base xl:text-lg tracking-wide text-white whitespace-nowrap drop-shadow-sm">PIERRE'S</span>
+          <span class="text-[9px] xl:text-[10px] tracking-[0.16em] font-semibold text-brand-gold uppercase whitespace-nowrap drop-shadow-sm">Bookkeeping Services</span>
         </div>
       </a>
 
-      <!-- DESKTOP NAVIGATION: Ultra-clean single-line layout without wrapping or overlapping -->
-      <nav class="hidden lg:flex items-center space-x-1.5 xl:space-x-3 text-xs xl:text-[13px] font-medium text-gray-700 whitespace-nowrap" aria-label="Main Navigation">
-        <a href="#home" onclick="navigateTo('home'); return false;" class="nav-link text-brand-navy border-b-2 border-brand-gold py-1 px-1 font-semibold" data-target="home">Home</a>
-        <a href="#whats-new" onclick="navigateTo('whats-new'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1 inline-flex items-center gap-1" data-target="whats-new">
+      <!-- DESKTOP NAVIGATION: Ultra-clean single-line layout with translucent text and golden accents -->
+      <nav class="hidden lg:flex items-center space-x-1.5 xl:space-x-3 text-xs xl:text-[13px] font-medium text-gray-200 whitespace-nowrap" aria-label="Main Navigation">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="nav-link text-white border-b-2 border-brand-gold py-1 px-1 font-semibold drop-shadow-sm" data-target="home">Home</a>
+        <a href="#whats-new" onclick="navigateTo('whats-new'); return false;" class="nav-link hover:text-white transition-colors py-1 px-1 inline-flex items-center gap-1 drop-shadow-sm" data-target="whats-new">
           <span>What's New!</span>
-          <span class="px-1 py-0.2 text-[9px] font-bold bg-amber-100 text-amber-800 rounded-full leading-tight">New</span>
+          <span class="px-1.5 py-0.2 text-[9px] font-bold bg-amber-400/20 text-brand-gold border border-brand-gold/40 rounded-full leading-tight backdrop-blur-xs">New</span>
         </a>
-        <a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="practice-areas">Practice Areas (Tax)</a>
-        <a href="#services" onclick="navigateTo('services'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="services">Services</a>
-        <a href="#publications" onclick="navigateTo('publications'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="publications">Publications</a>
-        <a href="#about" onclick="navigateTo('about'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="about">About</a>
-        <a href="#contact" onclick="navigateTo('contact'); return false;" class="nav-link hover:text-brand-navy transition-colors py-1 px-1" data-target="contact">Contact & Offices</a>
+        <a href="#practice-areas" onclick="navigateTo('practice-areas'); return false;" class="nav-link hover:text-white transition-colors py-1 px-1 drop-shadow-sm" data-target="practice-areas">Practice Areas (Tax)</a>
+        <a href="#services" onclick="navigateTo('services'); return false;" class="nav-link hover:text-white transition-colors py-1 px-1 drop-shadow-sm" data-target="services">Services</a>
+        <a href="#publications" onclick="navigateTo('publications'); return false;" class="nav-link hover:text-white transition-colors py-1 px-1 drop-shadow-sm" data-target="publications">Publications</a>
+        <a href="#about" onclick="navigateTo('about'); return false;" class="nav-link hover:text-white transition-colors py-1 px-1 drop-shadow-sm" data-target="about">About</a>
+        <a href="#contact" onclick="navigateTo('contact'); return false;" class="nav-link hover:text-white transition-colors py-1 px-1 drop-shadow-sm" data-target="contact">Contact & Offices</a>
       </nav>
 
       <!-- APPOINTMENT ACTION CTA & PHONE: Aligned strictly on the same single line -->
       <div class="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 whitespace-nowrap">
-        <a href="tel:2038897272" class="text-xs xl:text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors inline-flex items-center gap-1.5 px-2 py-1.5 rounded hover:bg-gray-50">
+        <a href="tel:2038897272" class="text-xs xl:text-sm font-semibold text-white hover:text-brand-gold transition-colors inline-flex items-center gap-1.5 px-2 py-1.5 rounded hover:bg-white/10 backdrop-blur-xs">
           <i class="fa-solid fa-phone text-[11px] text-brand-gold"></i>
           <span>203-889-7272</span>
         </a>
-        <button onclick="openAppointmentModal()" class="px-3 xl:px-4 py-2 bg-brand-navy text-white text-xs xl:text-[13px] font-semibold rounded hover:bg-brand-slate transition-all shadow-sm hover:shadow border border-brand-navy hover:border-brand-gold inline-flex items-center gap-1.5 shrink-0">
-          <i class="fa-regular fa-calendar-check text-[11px] text-brand-gold"></i>
+        <button onclick="openAppointmentModal()" class="px-3 xl:px-4 py-2 bg-brand-gold text-brand-navy text-xs xl:text-[13px] font-bold rounded hover:bg-brand-goldHover transition-all shadow-md hover:shadow-lg border border-brand-gold inline-flex items-center gap-1.5 shrink-0">
+          <i class="fa-regular fa-calendar-check text-[11px] text-brand-navy"></i>
           <span>Schedule an Appointment</span>
         </button>
       </div>
 
       <!-- MOBILE MENU BUTTON -->
-      <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-md text-gray-600 hover:text-brand-navy focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0" aria-label="Toggle Navigation Menu">
+      <button type="button" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-md text-white hover:text-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold shrink-0 bg-white/10 backdrop-blur-sm" aria-label="Toggle Navigation Menu">
         <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
       </button>
     </div>
 
     <!-- MOBILE NAVIGATION FLYOUT -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-3">
-      <a href="#home" onclick="navigateTo('home'); toggleMobileMenu(); return false;" class="block py-2 text-base font-semibold text-brand-navy border-l-4 border-brand-gold pl-3">Home</a>
-      <a href="#whats-new" onclick="navigateTo('whats-new'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">What's New! (New Office)</a>
-      <a href="#practice-areas" onclick="navigateTo('practice-areas'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Practice Areas (Tax Filing Services)</a>
-      <a href="#services" onclick="navigateTo('services'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Services</a>
-      <a href="#publications" onclick="navigateTo('publications'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Publications & Tax News</a>
-      <a href="#about" onclick="navigateTo('about'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">About Felicia Pierre</a>
-      <a href="#contact" onclick="navigateTo('contact'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-600 pl-4 hover:text-brand-navy">Contact & Offices</a>
-      <div class="pt-4 border-t border-gray-100 flex flex-col gap-3">
-        <a href="tel:2038897272" class="w-full py-2.5 px-4 bg-gray-100 text-brand-navy font-semibold text-center rounded flex items-center justify-center gap-2">
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-navy/95 backdrop-blur-md border-b border-white/15 px-4 pt-3 pb-6 space-y-3 text-white">
+      <a href="#home" onclick="navigateTo('home'); toggleMobileMenu(); return false;" class="block py-2 text-base font-semibold text-brand-gold border-l-4 border-brand-gold pl-3">Home</a>
+      <a href="#whats-new" onclick="navigateTo('whats-new'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-200 pl-4 hover:text-brand-gold">What's New! (New Office)</a>
+      <a href="#practice-areas" onclick="navigateTo('practice-areas'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-200 pl-4 hover:text-brand-gold">Practice Areas (Tax Filing Services)</a>
+      <a href="#services" onclick="navigateTo('services'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-200 pl-4 hover:text-brand-gold">Services</a>
+      <a href="#publications" onclick="navigateTo('publications'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-200 pl-4 hover:text-brand-gold">Publications & Tax News</a>
+      <a href="#about" onclick="navigateTo('about'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-200 pl-4 hover:text-brand-gold">About Felicia Pierre</a>
+      <a href="#contact" onclick="navigateTo('contact'); toggleMobileMenu(); return false;" class="block py-2 text-base font-medium text-gray-200 pl-4 hover:text-brand-gold">Contact & Offices</a>
+      <div class="pt-4 border-t border-white/15 flex flex-col gap-3">
+        <a href="tel:2038897272" class="w-full py-2.5 px-4 bg-white/10 text-white font-semibold text-center rounded flex items-center justify-center gap-2 hover:bg-white/20 transition-colors">
           <i class="fa-solid fa-phone text-brand-gold"></i> Call 203-889-7272
         </a>
-        <button onclick="openAppointmentModal(); toggleMobileMenu();" class="w-full py-2.5 px-4 bg-brand-navy text-white font-semibold text-center rounded">
+        <button onclick="openAppointmentModal(); toggleMobileMenu();" class="w-full py-2.5 px-4 bg-brand-gold text-brand-navy font-bold text-center rounded hover:bg-brand-goldHover transition-colors">
           Schedule an Appointment
         </button>
       </div>
@@ -192,23 +268,34 @@
     <!-- ========================================== -->
     <div id="page-home" class="page-section active">
       
-      <!-- HERO SECTION -->
-      <section class="relative bg-brand-navy text-white py-16 lg:py-24 overflow-hidden">
-        <!-- Abstract financial grid watermark -->
-        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <!-- HERO SECTION WITH RELEVANT BACKGROUND IMAGE -->
+      <section class="relative bg-brand-navy text-white py-16 lg:py-24 overflow-hidden min-h-[580px] flex items-center">
+        <!-- Ambient Background Image Container -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <img 
+            src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20030619.png" 
+            alt="Pierre's Bookkeeping Services Financial Review and Practice" 
+            class="w-full h-full object-cover object-center filter brightness-[0.85] contrast-105"
+          >
+          <!-- Multi-tier Luxury Dark Navy & Sapphire Gradient Overlay to maintain crystal clear contrast -->
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/65"></div>
+          <div class="absolute inset-0 bg-radial at-center from-transparent via-brand-navy/35 to-brand-navy/90"></div>
+          <!-- Fine grid texture overlay -->
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px); background-size: 32px 32px;"></div>
+        </div>
         
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             <div class="lg:col-span-7 space-y-6 text-left">
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-brand-gold text-xs font-semibold tracking-wider uppercase border border-brand-gold/30">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 text-brand-gold text-xs font-semibold tracking-wider uppercase border border-brand-gold/30 backdrop-blur-sm">
                 <i class="fa-solid fa-shield-halved text-xs"></i> Established 2015 · Orlando, FL & Regional Markets
               </div>
-              <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight drop-shadow-sm">
                 Clarity in Your Numbers.<br>
                 <span class="text-brand-gold italic">Confidence</span> in Your Business.
               </h1>
-              <p class="text-gray-300 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+              <p class="text-gray-200 text-base sm:text-lg max-w-2xl font-light leading-relaxed drop-shadow-sm">
                 Professional bookkeeping, accounting, payroll, and tax preparation services designed to help individuals and businesses stay organized, informed, and financially prepared.
               </p>
               
@@ -217,14 +304,14 @@
                   <i class="fa-regular fa-calendar-check"></i>
                   <span>Schedule an Appointment</span>
                 </button>
-                <a href="tel:2038897272" class="px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-medium rounded border border-white/20 transition-colors flex items-center justify-center gap-2">
+                <a href="tel:2038897272" class="px-6 py-3.5 bg-white/10 hover:bg-white/15 text-white font-medium rounded border border-white/20 transition-colors flex items-center justify-center gap-2 backdrop-blur-sm">
                   <i class="fa-solid fa-phone text-brand-gold"></i>
                   <span>Call 203-889-7272</span>
                 </a>
               </div>
 
               <!-- Quick Assurance Markers -->
-              <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-xs text-gray-300 font-medium">
+              <div class="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 text-xs text-gray-200 font-medium">
                 <div class="flex items-center gap-2">
                   <i class="fa-solid fa-check text-brand-gold"></i>
                   <span>Appointments Mon–Fri</span>
@@ -243,10 +330,10 @@
             <!-- Authentic Office Gallery Showcase (Real Photos) -->
             <div class="lg:col-span-5">
               <div class="relative">
-                <div class="relative rounded-lg overflow-hidden shadow-2xl border-2 border-white/10 bg-slate-900 group">
+                <div class="relative rounded-lg overflow-hidden shadow-2xl border-2 border-white/20 bg-slate-900 group">
                   <img 
                     id="heroOfficeImage"
-                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg" 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/42e70a42-4c7f-47ac-a135-8123a1a71fa2.webp" 
                     alt="Pierre's Bookkeeping Services Orlando Office Suite" 
                     class="w-full h-80 sm:h-96 object-cover object-center transition-all duration-500"
                   >
@@ -258,17 +345,17 @@
 
                 <!-- Office Gallery Selector Thumbs -->
                 <div class="mt-3 grid grid-cols-4 gap-2">
-                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg')" class="rounded overflow-hidden border-2 border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
-                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg" alt="Office desk setup" class="h-14 w-full object-cover">
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/42e70a42-4c7f-47ac-a135-8123a1a71fa2.webp')" class="rounded overflow-hidden border-2 border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/42e70a42-4c7f-47ac-a135-8123a1a71fa2.webp" alt="Office desk setup" class="h-14 w-full object-cover">
                   </button>
-                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469053146_1090186642511505_6837190653210006501_n.jpg')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
-                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469053146_1090186642511505_6837190653210006501_n.jpg" alt="Client consultation desk" class="h-14 w-full object-cover">
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/b0aa0ade-22f8-4f49-829c-57de5dd0b9a8.webp')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/b0aa0ade-22f8-4f49-829c-57de5dd0b9a8.webp" alt="Client consultation desk" class="h-14 w-full object-cover">
                   </button>
-                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469085795_1090186715844831_4958646103603086772_n.jpg')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
-                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469085795_1090186715844831_4958646103603086772_n.jpg" alt="Accounting workstation and records" class="h-14 w-full object-cover">
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/2605221f-3370-4f51-820c-a0ad024dd44d.webp')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/2605221f-3370-4f51-820c-a0ad024dd44d.webp" alt="Accounting workstation and records" class="h-14 w-full object-cover">
                   </button>
-                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
-                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg" alt="Office corridor suite" class="h-14 w-full object-cover">
+                  <button onclick="setHeroOffice('https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/b84d60fd-e24c-44cf-8152-5f9a0f0c2a35.webp')" class="rounded overflow-hidden border border-white/20 hover:border-brand-gold focus:outline-none hover:opacity-100 opacity-80 transition">
+                    <img src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/b84d60fd-e24c-44cf-8152-5f9a0f0c2a35.webp" alt="Office corridor suite" class="h-14 w-full object-cover">
                   </button>
                 </div>
               </div>
@@ -281,7 +368,7 @@
       <!-- REGIONAL SERVICE COVERAGE MARKETS SECTION -->
       <section class="bg-gradient-to-r from-slate-50 via-gray-100 to-slate-50 border-b border-gray-200 py-8 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div class="flex flex-col lg:flex-row items-center justify-between gap-6 reveal-on-scroll">
             
             <div class="text-center lg:text-left max-w-xl">
               <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-gray-300 text-[11px] font-bold tracking-wider text-brand-navy uppercase mb-1.5 shadow-2xs">
@@ -295,11 +382,11 @@
               </p>
             </div>
 
-            <!-- Verified Markets Cards -->
+            <!-- Verified Markets Cards with Staggered Hover & Slide-In -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full lg:w-auto">
               
               <!-- Market 1: Orlando, FL -->
-              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3">
+              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3 reveal-on-scroll delay-100 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <div class="w-8 h-8 rounded-full bg-brand-navy text-brand-gold flex items-center justify-center shrink-0 text-xs">
                   <i class="fa-solid fa-building"></i>
                 </div>
@@ -310,7 +397,7 @@
               </div>
 
               <!-- Market 2: New York, NY -->
-              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3">
+              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3 reveal-on-scroll delay-200 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <div class="w-8 h-8 rounded-full bg-gray-100 text-brand-navy flex items-center justify-center shrink-0 text-xs">
                   <i class="fa-solid fa-location-dot text-brand-gold"></i>
                 </div>
@@ -321,7 +408,7 @@
               </div>
 
               <!-- Market 3: New Haven, CT -->
-              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3">
+              <div class="bg-white px-4 py-3 rounded-lg border border-gray-200 shadow-2xs flex items-center gap-3 reveal-on-scroll delay-300 hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <div class="w-8 h-8 rounded-full bg-gray-100 text-brand-navy flex items-center justify-center shrink-0 text-xs">
                   <i class="fa-solid fa-location-dot text-brand-gold"></i>
                 </div>
@@ -340,7 +427,7 @@
       <!-- CORE SERVICES SECTION (Asymmetrical, distinct editorial presentations) -->
       <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal-on-scroll">
             <div class="max-w-2xl">
               <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Professional Capabilities</span>
               <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-navy mt-1">Core Financial Solutions</h2>
@@ -349,18 +436,18 @@
               </p>
             </div>
             <div>
-              <a href="#services" onclick="navigateTo('services'); return false;" class="inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b-2 border-brand-navy hover:border-brand-gold">
+              <a href="#services" onclick="navigateTo('services'); return false;" class="group inline-flex items-center gap-2 text-sm font-bold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b-2 border-brand-navy hover:border-brand-gold">
                 <span>View Full Service Catalog</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
+                <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
               </a>
             </div>
           </div>
 
-          <!-- Asymmetrical Service Grid -->
+          <!-- Asymmetrical Service Grid with Fluid Scroll Slide-Ins -->
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
             <!-- Service 1: Bookkeeping & Accounting (Dominant feature layout with Image 1 background) -->
-            <div class="relative overflow-hidden lg:col-span-7 rounded-2xl p-8 sm:p-10 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+            <div class="relative overflow-hidden lg:col-span-7 rounded-2xl p-8 sm:p-10 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-500 shadow-xl group reveal-slide-left hover:-translate-y-1.5 hover:shadow-2xl">
               <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
               <div class="absolute inset-0 z-0">
                 <img 
@@ -373,7 +460,7 @@
               </div>
 
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20 group-hover:scale-110 transition-transform duration-300">
                   <i class="fa-solid fa-book-journal-whills"></i>
                 </div>
                 <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40 mb-2">
@@ -384,19 +471,19 @@
                   Professional bookkeeping and accounting support that helps businesses maintain accurate, organized, and dependable financial records. We oversee accounts payable and receivable, reconcile bank balances, and structure your ledgers for absolute transparency.
                 </p>
                 <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-white font-medium">
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
                     <span>General Ledger Organization</span>
                   </div>
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
                     <span>Accounts Payable & Receivable</span>
                   </div>
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
                     <span>Monthly Bank Reconciliation</span>
                   </div>
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-circle-check text-brand-gold text-xs"></i>
                     <span>Audit-Ready Records</span>
                   </div>
@@ -405,13 +492,13 @@
               <div class="relative z-10 mt-8 pt-5 border-t border-white/20 flex flex-wrap items-center justify-between gap-3 bg-brand-navy/60 backdrop-blur-md px-4 py-3 rounded-lg border">
                 <span class="text-xs font-semibold text-gray-200 uppercase tracking-wider">Custom Service Retainers</span>
                 <button onclick="requestServiceQuote('Bookkeeping & Accounting')" class="text-xs sm:text-sm font-bold text-brand-gold hover:text-white transition-colors inline-flex items-center gap-1.5">
-                  Inquire About Bookkeeping <i class="fa-solid fa-chevron-right text-xs"></i>
+                  Inquire About Bookkeeping <i class="fa-solid fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
                 </button>
               </div>
             </div>
 
             <!-- Service 2: Tax Preparation & Filing (Image 2 background) -->
-            <div class="relative overflow-hidden lg:col-span-5 rounded-2xl p-8 sm:p-9 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+            <div class="relative overflow-hidden lg:col-span-5 rounded-2xl p-8 sm:p-9 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-500 shadow-xl group reveal-slide-right delay-150 hover:-translate-y-1.5 hover:shadow-2xl">
               <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
               <div class="absolute inset-0 z-0">
                 <img 
@@ -424,7 +511,7 @@
               </div>
 
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20 group-hover:scale-110 transition-transform duration-300">
                   <i class="fa-solid fa-file-invoice-dollar"></i>
                 </div>
                 <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40 mb-2">
@@ -455,7 +542,7 @@
             </div>
 
             <!-- Service 3: Payroll Processing (Image 3 background) -->
-            <div class="relative overflow-hidden lg:col-span-5 rounded-2xl p-8 sm:p-9 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+            <div class="relative overflow-hidden lg:col-span-5 rounded-2xl p-8 sm:p-9 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-500 shadow-xl group reveal-slide-left delay-100 hover:-translate-y-1.5 hover:shadow-2xl">
               <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
               <div class="absolute inset-0 z-0">
                 <img 
@@ -468,7 +555,7 @@
               </div>
 
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20 group-hover:scale-110 transition-transform duration-300">
                   <i class="fa-solid fa-users-gear"></i>
                 </div>
                 <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40 mb-2">
@@ -499,7 +586,7 @@
             </div>
 
             <!-- Service 4: Financial Reporting & Advisory (Image 4 background) -->
-            <div class="relative overflow-hidden lg:col-span-7 rounded-2xl p-8 sm:p-10 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-300 shadow-xl group">
+            <div class="relative overflow-hidden lg:col-span-7 rounded-2xl p-8 sm:p-10 flex flex-col justify-between border border-brand-navy/20 hover:border-brand-gold transition-all duration-500 shadow-xl group reveal-slide-right delay-200 hover:-translate-y-1.5 hover:shadow-2xl">
               <!-- Background Image with Gradient Overlay - Highly Visible & Vibrant -->
               <div class="absolute inset-0 z-0">
                 <img 
@@ -512,7 +599,7 @@
               </div>
 
               <div class="relative z-10">
-                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20">
+                <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl mb-6 shadow-md border border-white/20 group-hover:scale-110 transition-transform duration-300">
                   <i class="fa-solid fa-chart-line"></i>
                 </div>
                 <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/70 backdrop-blur-md text-xs uppercase font-bold tracking-widest text-brand-gold border border-brand-gold/40 mb-2">
@@ -523,19 +610,19 @@
                   Profit and loss statements, balance sheets, budgeting, financial forecasting, and cash-flow management. We transform raw numbers into intuitive reports that guide your business decisions.
                 </p>
                 <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-white font-medium">
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-check text-brand-gold text-xs"></i>
                     <span>Balance Sheets & P&L Statements</span>
                   </div>
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-check text-brand-gold text-xs"></i>
                     <span>Cash Flow Optimization</span>
                   </div>
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-check text-brand-gold text-xs"></i>
                     <span>Periodic Management Reports</span>
                   </div>
-                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15">
+                  <div class="flex items-center gap-2 bg-brand-navy/60 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/15 hover:border-brand-gold/40 transition-colors">
                     <i class="fa-solid fa-check text-brand-gold text-xs"></i>
                     <span>Operating Budget Development</span>
                   </div>
@@ -554,63 +641,91 @@
       </section>
 
       <!-- SECTION D: WHY WORK WITH PIERRE'S BOOKKEEPING SERVICES? -->
-      <section class="py-20 bg-brand-cream border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Our Value Standard</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-navy mt-2">Why Discerning Businesses Rely On Us</h2>
-            <p class="text-gray-600 mt-3 text-base">
+      <section class="relative overflow-hidden py-24 border-y border-brand-navy/30 group">
+        <!-- Background Image Displayed As Is (No Blue Gradient Overlay) -->
+        <div class="absolute inset-0 z-0">
+          <img 
+            src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/43ca8486-cfa7-4ef3-a7f6-c9641aaef07f.webp" 
+            alt="Pierre's Bookkeeping Value Standards and Financial Practice" 
+            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+          >
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+            <span class="inline-block px-4 py-1 rounded-full bg-black/80 backdrop-blur-md text-xs uppercase font-bold tracking-widest text-white border border-white/20">
+              Our Value Standard
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-3 drop-shadow-lg">
+              Why Discerning Businesses Rely On Us
+            </h2>
+            <p class="text-white mt-3 text-base font-medium leading-relaxed drop-shadow-md max-w-2xl mx-auto bg-black/50 backdrop-blur-sm p-3 rounded-xl border border-white/10">
               Accurate financial records are not just about regulatory compliance; they are the compass for every operational decision.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm space-y-3">
-              <div class="text-brand-gold text-2xl font-serif font-bold">01</div>
-              <h3 class="font-serif text-xl font-bold text-brand-navy">Organized Financial Practice</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">
+          <!-- 3 Circular Black & White Professional Containers -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+            
+            <!-- Box 01: Circular Black & White -->
+            <div class="w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-black/85 backdrop-blur-md border-2 border-white/30 text-white p-8 flex flex-col items-center justify-center text-center shadow-2xl space-y-2 reveal-on-scroll delay-100 hover:scale-105 hover:bg-black hover:border-white transition-all duration-300 group/circle">
+              <div class="text-white text-2xl font-serif font-extrabold tracking-wider border-b border-white/30 pb-1 px-3">01</div>
+              <h3 class="font-serif text-base sm:text-lg font-bold text-white leading-tight">Organized Financial Practice</h3>
+              <p class="text-xs text-gray-200 leading-relaxed max-w-[210px] font-normal">
                 Structured ledger discipline ensures records are clean, accessible, and audit-ready year-round, eliminating tax season panic.
               </p>
             </div>
 
-            <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm space-y-3">
-              <div class="text-brand-gold text-2xl font-serif font-bold">02</div>
-              <h3 class="font-serif text-xl font-bold text-brand-navy">Personalized Accountability</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">
+            <!-- Box 02: Circular Black & White (White Inversion for Dynamic Professional Contrast) -->
+            <div class="w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-white/95 backdrop-blur-md border-2 border-black/80 text-black p-8 flex flex-col items-center justify-center text-center shadow-2xl space-y-2 reveal-on-scroll delay-200 hover:scale-105 hover:bg-white hover:border-black transition-all duration-300 group/circle">
+              <div class="text-black text-2xl font-serif font-extrabold tracking-wider border-b border-black/30 pb-1 px-3">02</div>
+              <h3 class="font-serif text-base sm:text-lg font-bold text-black leading-tight">Personalized Accountability</h3>
+              <p class="text-xs text-gray-800 leading-relaxed max-w-[210px] font-medium">
                 Work directly with seasoned financial professionals led by Felicia Pierre. Your account receives dedicated attention rather than automated routing.
               </p>
             </div>
 
-            <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm space-y-3">
-              <div class="text-brand-gold text-2xl font-serif font-bold">03</div>
-              <h3 class="font-serif text-xl font-bold text-brand-navy">Clear Financial Guidance</h3>
-              <p class="text-sm text-gray-600 leading-relaxed">
-                We interpret balance sheets and profit & loss statements into actionable intelligence, clarifying your operating margins and cash position.
+            <!-- Box 03: Circular Black & White -->
+            <div class="w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-black/85 backdrop-blur-md border-2 border-white/30 text-white p-8 flex flex-col items-center justify-center text-center shadow-2xl space-y-2 reveal-on-scroll delay-300 hover:scale-105 hover:bg-black hover:border-white transition-all duration-300 group/circle">
+              <div class="text-white text-2xl font-serif font-extrabold tracking-wider border-b border-white/30 pb-1 px-3">03</div>
+              <h3 class="font-serif text-base sm:text-lg font-bold text-white leading-tight">Clear Financial Guidance</h3>
+              <p class="text-xs text-gray-200 leading-relaxed max-w-[210px] font-normal">
+                Transparent profit & loss statements, balance sheets, and cash flow reports that provide immediate insight for confident business decisions.
               </p>
             </div>
+
           </div>
         </div>
       </section>
 
-      <!-- SECTION E: FOUNDER INTRODUCTION (Editorial Split) -->
-      <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- SECTION E: FOUNDER INTRODUCTION (Editorial Split with Provided Background Image As Is) -->
+      <section class="relative overflow-hidden py-24 border-y border-gray-200 group">
+        <!-- Background Image As It Is -->
+        <div class="absolute inset-0 z-0">
+          <img 
+            src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/df571ebb-cdb7-4c73-8d42-1e58f14d6fe5.webp" 
+            alt="Pierre's Bookkeeping Executive Office Environment" 
+            class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+          >
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div class="lg:col-span-5">
+            <div class="lg:col-span-5 reveal-slide-left">
               <div class="relative">
-                <div class="rounded-2xl overflow-hidden border-2 border-brand-gold/30 shadow-2xl bg-brand-navy group">
+                <div class="rounded-2xl overflow-hidden border-2 border-brand-gold/40 shadow-2xl bg-brand-navy group">
                   <!-- Founder Principal Showcase Image with subtle hover zoom -->
                   <img 
-                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20004131.png" 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/84ad3951-b97a-467c-a23e-e1b3562656f5.webp" 
                     alt="Felicia Pierre - Founder & Principal Accountant" 
-                    class="w-full h-[430px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    class="w-full h-[450px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                   >
-                  <!-- Subtle gradient vignette for editorial prestige -->
+                  <!-- Subtle vignette -->
                   <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent pointer-events-none"></div>
                 </div>
                 <!-- Editorial badge overlay -->
-                <div class="absolute -bottom-5 -right-3 sm:-right-5 bg-brand-navy text-white p-4 sm:p-5 rounded-xl border border-brand-gold/50 shadow-2xl max-w-xs">
+                <div class="absolute -bottom-5 -right-3 sm:-right-5 bg-brand-navy text-white p-4 sm:p-5 rounded-xl border border-brand-gold/50 shadow-2xl max-w-xs hover:border-brand-gold transition-colors">
                   <div class="flex items-center gap-2 mb-1">
                     <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
                     <span class="text-[10px] uppercase tracking-wider font-bold text-brand-gold">Founder & Principal</span>
@@ -621,14 +736,14 @@
               </div>
             </div>
 
-            <div class="lg:col-span-7 space-y-6">
+            <div class="lg:col-span-7 space-y-6 reveal-slide-right delay-150 bg-white/95 backdrop-blur-md p-8 sm:p-10 rounded-3xl border border-gray-200 shadow-2xl">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-50 text-amber-900 text-xs font-semibold border border-amber-200">
                 <i class="fa-solid fa-user-tie"></i> Founder & Principal Accountant
               </div>
               <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-navy leading-snug">
                 Experience Behind Every Number.
               </h2>
-              <div class="text-gray-600 space-y-4 text-base leading-relaxed">
+              <div class="text-gray-700 space-y-4 text-base leading-relaxed">
                 <p>
                   Pierre's Bookkeeping Services, LLC was established in 2015 by <strong class="text-brand-navy font-semibold">Felicia Pierre</strong>, bringing years of dedicated practice in accounting, bookkeeping, and financial operations dating back to 2007.
                 </p>
@@ -638,7 +753,7 @@
               </div>
 
               <!-- Credential highlights with honest verification indicators -->
-              <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 space-y-2">
+              <div class="p-4 bg-gray-50 rounded-lg border border-gray-200 space-y-2 hover:border-brand-gold/40 transition-colors">
                 <div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-500">
                   <span>Professional Credentials & Background</span>
                   <span class="text-amber-800 bg-amber-100 px-2 py-0.5 rounded text-[10px]">Verification In Progress</span>
@@ -664,7 +779,7 @@
               </div>
 
               <div class="pt-2 flex items-center gap-4">
-                <a href="#about" onclick="navigateTo('about'); return false;" class="px-6 py-3 bg-brand-navy text-white text-sm font-semibold rounded hover:bg-brand-slate transition-colors inline-flex items-center gap-2">
+                <a href="#about" onclick="navigateTo('about'); return false;" class="px-6 py-3 bg-brand-navy text-white text-sm font-semibold rounded hover:bg-brand-slate transition-all inline-flex items-center gap-2 hover:gap-3">
                   <span>Meet Felicia & Learn Our History</span>
                   <i class="fa-solid fa-arrow-right text-xs text-brand-gold"></i>
                 </a>
@@ -678,7 +793,7 @@
       <!-- SECTION F: OUR WORKING PROCESS -->
       <section class="py-20 bg-brand-navy text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="text-center max-w-2xl mx-auto mb-16 reveal-on-scroll">
             <span class="text-xs uppercase font-bold tracking-widest text-brand-gold">Structured Engagement</span>
             <h2 class="font-serif text-3xl sm:text-4xl font-bold mt-2">How We Work Together</h2>
             <p class="text-gray-300 mt-3 text-sm sm:text-base">
@@ -687,7 +802,7 @@
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative reveal-on-scroll delay-100 hover:-translate-y-2 hover:bg-white/10 hover:border-brand-gold/40 transition-all duration-300">
               <span class="text-3xl font-serif font-bold text-brand-gold/60">01</span>
               <h3 class="font-serif text-xl font-bold text-white mt-4">Initial Consultation</h3>
               <p class="text-gray-300 text-sm mt-3 leading-relaxed">
@@ -695,7 +810,7 @@
               </p>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative reveal-on-scroll delay-200 hover:-translate-y-2 hover:bg-white/10 hover:border-brand-gold/40 transition-all duration-300">
               <span class="text-3xl font-serif font-bold text-brand-gold/60">02</span>
               <h3 class="font-serif text-xl font-bold text-white mt-4">Financial Organization</h3>
               <p class="text-gray-300 text-sm mt-3 leading-relaxed">
@@ -703,7 +818,7 @@
               </p>
             </div>
 
-            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-8 relative reveal-on-scroll delay-300 hover:-translate-y-2 hover:bg-white/10 hover:border-brand-gold/40 transition-all duration-300">
               <span class="text-3xl font-serif font-bold text-brand-gold/60">03</span>
               <h3 class="font-serif text-xl font-bold text-white mt-4">Ongoing Support</h3>
               <p class="text-gray-300 text-sm mt-3 leading-relaxed">
@@ -871,7 +986,7 @@
 
             </div>
 
-            <!-- Right Visual Gallery Column -->
+            <!-- Right Visual Gallery Column (What's New! Page) -->
             <div class="lg:col-span-5 bg-brand-navy p-8 sm:p-10 flex flex-col justify-between text-white border-l border-gray-200">
               <div class="space-y-5">
                 <div class="flex items-center justify-between">
@@ -885,7 +1000,7 @@
                 
                 <div class="rounded-2xl overflow-hidden border-2 border-white/15 shadow-2xl relative group">
                   <img 
-                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/468977213_1090186809178155_6788137317038410267_n.jpg" 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/42e70a42-4c7f-47ac-a135-8123a1a71fa2.webp" 
                     alt="Downtown Orlando Main Office Desk at Pierre's Bookkeeping"
                     class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   >
@@ -897,14 +1012,14 @@
                 <div class="grid grid-cols-2 gap-3 pt-1">
                   <div class="rounded-xl overflow-hidden border border-white/15 shadow-sm group">
                     <img 
-                      src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469053146_1090186642511505_6837190653210006501_n.jpg" 
+                      src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/b0aa0ade-22f8-4f49-829c-57de5dd0b9a8.webp" 
                       alt="Client consultation area" 
                       class="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-300"
                     >
                   </div>
                   <div class="rounded-xl overflow-hidden border border-white/15 shadow-sm group">
                     <img 
-                      src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg" 
+                      src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/2605221f-3370-4f51-820c-a0ad024dd44d.webp" 
                       alt="Office suite entrance" 
                       class="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-300"
                     >
@@ -976,28 +1091,29 @@
         </div>
       </div>
 
-      <!-- Content Container -->
+      <!-- Content Container (Practice Areas: With Executive Gradient Overlays) -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
 
         <!-- 1. SALES, ANNUAL RENTAL INCOME, AND PERSONAL PROPERTY TAX (Multi-Jurisdictional Tax Authority) -->
         <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
-          <!-- Background Image & Translucent Gradient Layer -->
+          <!-- Background Image With Creative Executive Gradient Overlay -->
           <div class="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1600&q=80" 
+              src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/c11a5509-259a-4c60-a80a-5b33a856ac95.webp" 
               alt="Tax forms, state filing documents and calculations" 
-              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95"
             >
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-black/30"></div>
           </div>
 
           <div class="relative z-10 space-y-6">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center text-xl shrink-0 shadow-md border border-brand-gold/40">
                 <i class="fa-solid fa-file-invoice-dollar"></i>
               </div>
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+              <div class="bg-brand-navy/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 inline-block shadow-md">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-gold/20 text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
                   Multi-Jurisdictional Tax Authority
                 </span>
                 <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">
@@ -1006,13 +1122,13 @@
               </div>
             </div>
 
-            <p class="text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+            <p class="text-sm sm:text-base text-white leading-relaxed bg-brand-navy/90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-lg">
               <strong class="text-brand-gold font-semibold">NYS, CT & FL Sales Tax Filing Expert, Annual Rental Income Filing & Personal Property Tax Filing:</strong>
               We have extensive experience in sales tax filing for both NYS and CT sales tax with companies on both <span class="text-white font-semibold underline decoration-brand-gold decoration-2">accrual and cash basis accounting methods</span>. We also have extensive experience with Connecticut (CT) state personal property tax filing and the CT state rental income annual report.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2 text-white">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 text-white shadow-lg">
                 <h3 class="font-serif font-bold text-brand-gold text-base flex items-center gap-2">
                   <i class="fa-solid fa-map-location-dot text-brand-gold text-sm"></i> Multi-State Sales Tax
                 </h3>
@@ -1021,7 +1137,7 @@
                 </p>
               </div>
 
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2 text-white">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 text-white shadow-lg">
                 <h3 class="font-serif font-bold text-brand-gold text-base flex items-center gap-2">
                   <i class="fa-solid fa-building-user text-brand-gold text-sm"></i> Annual Rental Income
                 </h3>
@@ -1030,7 +1146,7 @@
                 </p>
               </div>
 
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2 text-white">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 text-white shadow-lg">
                 <h3 class="font-serif font-bold text-brand-gold text-base flex items-center gap-2">
                   <i class="fa-solid fa-boxes-stacked text-brand-gold text-sm"></i> Personal Property Tax
                 </h3>
@@ -1040,7 +1156,7 @@
               </div>
             </div>
 
-            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/20 text-xs text-gray-300 bg-brand-navy/50 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/10">
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-200 bg-brand-navy/90 backdrop-blur-md px-5 py-3 rounded-lg border border-white/20 shadow-md">
               <span>Applicable across New York, Connecticut, Florida & nationwide remote clients</span>
               <button onclick="requestServiceQuote('Tax Preparation & Filing')" class="text-brand-gold font-bold hover:text-white transition-colors inline-flex items-center gap-1">
                 Inquire About Sales & Property Taxes <i class="fa-solid fa-chevron-right text-[10px]"></i>
@@ -1051,35 +1167,36 @@
 
         <!-- 2. PAYROLL (Workforce & Compliance Operations) -->
         <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
-          <!-- Background Image & Translucent Gradient Layer -->
+          <!-- Background Image With Creative Executive Gradient Overlay -->
           <div class="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1600&q=80" 
+              src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/de778056-7967-43df-b402-7e067f385441.webp" 
               alt="Payroll processing, team calculations and payroll management" 
-              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95"
             >
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-black/30"></div>
           </div>
 
           <div class="relative z-10 space-y-6">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center text-xl shrink-0 shadow-md border border-brand-gold/40">
                 <i class="fa-solid fa-users-gear"></i>
               </div>
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+              <div class="bg-brand-navy/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 inline-block shadow-md">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-gold/20 text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
                   Workforce & Compliance Operations
                 </span>
                 <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Payroll</h2>
               </div>
             </div>
 
-            <div class="space-y-4 text-sm sm:text-base text-gray-100 leading-relaxed">
-              <p class="bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+            <div class="space-y-4 text-sm sm:text-base text-white leading-relaxed">
+              <p class="bg-brand-navy/90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-lg">
                 For clients, we currently make all payroll tax deposits, file the quarterly and annual payroll taxes, and prepare all W-2s & 1099s. In addition, we oversee printing, distribution, and filing of all payroll reports. We also work with payroll companies that currently execute payroll filing for larger workforces, such as <strong class="text-white">ADP</strong> and <strong class="text-white">Paychex</strong>.
               </p>
               
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
                 <p class="text-xs font-bold text-brand-gold uppercase tracking-wider mb-2">
                   Comprehensive Software & Engine Experience:
                 </p>
@@ -1096,15 +1213,15 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2 text-xs">
-              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 text-white">
+              <div class="p-4 bg-brand-navy/90 backdrop-blur-md rounded-xl border border-white/20 text-white shadow-lg">
                 <strong class="text-brand-gold block text-sm font-semibold mb-1">Hands-On Calculations</strong>
                 <p class="text-gray-200">Complete gross-to-net processing, withholdings, tax deposits, and multi-state compliance.</p>
               </div>
-              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 text-white">
+              <div class="p-4 bg-brand-navy/90 backdrop-blur-md rounded-xl border border-white/20 text-white shadow-lg">
                 <strong class="text-brand-gold block text-sm font-semibold mb-1">Quarterly & Annual Filings</strong>
                 <p class="text-gray-200">Preparation and filing of Form 941, Form 940, state unemployment returns, W-2s, and 1099s.</p>
               </div>
-              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 text-white sm:col-span-2 lg:col-span-1">
+              <div class="p-4 bg-brand-navy/90 backdrop-blur-md rounded-xl border border-white/20 text-white shadow-lg sm:col-span-2 lg:col-span-1">
                 <strong class="text-brand-gold block text-sm font-semibold mb-1">Customized Payroll Analytics</strong>
                 <p class="text-gray-200">Furnishing of payroll reports, customized managerial breakdowns, and Payroll % to Gross Sales metrics.</p>
               </div>
@@ -1114,49 +1231,50 @@
 
         <!-- 3. ADVISORY (Executive Intelligence) -->
         <section class="relative overflow-hidden rounded-2xl border border-blue-500/30 p-8 sm:p-10 shadow-xl space-y-6 group">
-          <!-- Background Image & Translucent Gradient Layer -->
+          <!-- Background Image With Creative Executive Gradient Overlay -->
           <div class="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80" 
+              src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/add3e10e-ae35-49b4-b511-d386a86292d9.webp" 
               alt="Financial reporting dashboard, forecasting and executive charts" 
-              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95"
             >
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/70"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-black/30"></div>
           </div>
 
           <div class="relative z-10 space-y-6 text-white">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center text-xl shrink-0 shadow-md border border-brand-gold/40">
                 <i class="fa-solid fa-chart-line"></i>
               </div>
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-widest text-brand-gold border border-brand-gold/40">
+              <div class="bg-brand-navy/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 inline-block shadow-md">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-gold/20 text-xs uppercase font-bold tracking-widest text-brand-gold border border-brand-gold/40">
                   Executive Intelligence
                 </span>
                 <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Advisory</h2>
               </div>
             </div>
 
-            <p class="text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+            <p class="text-sm sm:text-base text-white leading-relaxed bg-brand-navy/90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-lg">
               Performance in budgeting and cash flow management. We specialize in customized internal reporting catered directly to our clients' strategic needs. Monthly, quarterly, and yearly internal Profit & Loss statements (P&Ls), balance sheets, and job profitability reports are our specialty.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 shadow-lg">
                 <h3 class="font-serif font-bold text-brand-gold text-base">Periodic Statements</h3>
                 <p class="text-xs text-gray-200 leading-relaxed">
                   Monthly, quarterly, and yearly internal P&Ls and balance sheets structured for management clarity rather than confusing jargon.
                 </p>
               </div>
 
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 shadow-lg">
                 <h3 class="font-serif font-bold text-brand-gold text-base">Job Profitability</h3>
                 <p class="text-xs text-gray-200 leading-relaxed">
                   Granular project and job costing reports that uncover which contracts yield your healthiest operating margins.
                 </p>
               </div>
 
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 shadow-lg">
                 <h3 class="font-serif font-bold text-brand-gold text-base">Labor & Subcontractor %</h3>
                 <p class="text-xs text-gray-200 leading-relaxed">
                   Payroll % to Gross Sales and Subcontractor % to Gross Revenue reports available on request to control variable costs.
@@ -1164,7 +1282,7 @@
               </div>
             </div>
 
-            <div class="p-4 bg-brand-navy/80 border border-brand-gold/40 rounded-xl text-xs text-gray-100 backdrop-blur-md">
+            <div class="p-4 bg-brand-navy/90 border border-brand-gold/40 rounded-xl text-xs text-gray-100 backdrop-blur-md shadow-md">
               <strong class="text-brand-gold font-semibold block mb-1">Our Core Advisory Mission:</strong>
               The purpose of internal reporting is for management and business owners to make more effective, financially sound, and profitable decisions on a re-occurring basis.
             </div>
@@ -1173,30 +1291,31 @@
 
         <!-- 4. BOOKKEEPING (Accurate & Ethical Service) -->
         <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
-          <!-- Background Image & Translucent Gradient Layer -->
+          <!-- Background Image With Creative Executive Gradient Overlay -->
           <div class="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80" 
+              src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/47c92f4e-4643-4fd9-9f46-f33e28d52b8f.webp" 
               alt="Ethical corporate governance, ledgers and bookkeeping records" 
-              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95"
             >
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-black/30"></div>
           </div>
 
           <div class="relative z-10 space-y-6 text-white">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center text-xl shrink-0 shadow-md border border-brand-gold/40">
                 <i class="fa-solid fa-book-journal-whills"></i>
               </div>
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+              <div class="bg-brand-navy/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 inline-block shadow-md">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-gold/20 text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
                   Accurate & Ethical Service
                 </span>
                 <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Bookkeeping</h2>
               </div>
             </div>
 
-            <div class="space-y-4 text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+            <div class="space-y-4 text-sm sm:text-base text-white leading-relaxed bg-brand-navy/90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-lg">
               <p>
                 One of the most important aspects in bookkeeping and accounting is that we provide <strong class="text-white font-semibold">accuracy and ethical services</strong>. We believe in <span class="text-white font-semibold underline decoration-brand-gold decoration-2">separation of duties</span> to prevent fraud and provide accurate work through rigorous cross-referencing.
               </p>
@@ -1206,7 +1325,7 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
-              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 flex items-start gap-3">
+              <div class="p-4 bg-brand-navy/90 backdrop-blur-md rounded-xl border border-white/20 flex items-start gap-3 shadow-lg">
                 <i class="fa-solid fa-shield-halved text-brand-gold text-base mt-0.5"></i>
                 <div>
                   <strong class="text-brand-gold font-semibold block mb-0.5">Separation of Duties</strong>
@@ -1214,7 +1333,7 @@
                 </div>
               </div>
 
-              <div class="p-4 bg-brand-navy/70 backdrop-blur-md rounded-xl border border-white/15 flex items-start gap-3">
+              <div class="p-4 bg-brand-navy/90 backdrop-blur-md rounded-xl border border-white/20 flex items-start gap-3 shadow-lg">
                 <i class="fa-solid fa-calendar-check text-brand-gold text-base mt-0.5"></i>
                 <div>
                   <strong class="text-brand-gold font-semibold block mb-0.5">Meeting Strict Deadlines</strong>
@@ -1227,35 +1346,36 @@
 
         <!-- 5. CASH MANAGEMENT (Financial Lifeline) -->
         <section class="relative overflow-hidden rounded-2xl border border-gray-300 p-8 sm:p-10 shadow-xl space-y-6 group">
-          <!-- Background Image & Translucent Gradient Layer -->
+          <!-- Background Image With Creative Executive Gradient Overlay -->
           <div class="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1600&q=80" 
+              src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/c11a5509-259a-4c60-a80a-5b33a856ac95.webp" 
               alt="Cash flow, accounts receivable and liquidity management" 
-              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95 contrast-105"
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-95"
             >
-            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/65"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-black/30"></div>
           </div>
 
           <div class="relative z-10 space-y-6 text-white">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-lg bg-brand-gold text-brand-navy flex items-center justify-center text-xl shrink-0 shadow-md">
+              <div class="w-12 h-12 rounded-lg bg-brand-navy text-brand-gold flex items-center justify-center text-xl shrink-0 shadow-md border border-brand-gold/40">
                 <i class="fa-solid fa-money-bill-transfer"></i>
               </div>
-              <div>
-                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-navy/80 backdrop-blur-md text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
+              <div class="bg-brand-navy/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 inline-block shadow-md">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-brand-gold/20 text-xs uppercase font-bold tracking-wider text-brand-gold border border-brand-gold/40">
                   Financial Lifeline
                 </span>
                 <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1 drop-shadow-sm">Cash Management</h2>
               </div>
             </div>
 
-            <p class="text-sm sm:text-base text-gray-100 leading-relaxed bg-brand-navy/60 backdrop-blur-md p-4 rounded-xl border border-white/15">
+            <p class="text-sm sm:text-base text-white leading-relaxed bg-brand-navy/90 backdrop-blur-md p-5 rounded-xl border border-white/20 shadow-lg">
               Budgeting and cash flow statements are the heart and lifeline of any company. <strong class="text-white">Accounts Receivable (A/R) & Accounts Payable (A/P) go hand in hand</strong>: bills cannot be paid if A/R is not collected on a timely basis, and A/R will not exist if sales are not generated. Aside from actively managing cash flow, internal reporting plays a crucial role in safeguarding company liquidity.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 shadow-lg">
                 <div class="text-brand-gold text-xl font-bold"><i class="fa-solid fa-arrow-trend-up"></i></div>
                 <h3 class="font-serif font-bold text-brand-gold text-base">Sales to Cash Inflow</h3>
                 <p class="text-xs text-gray-200 leading-relaxed">
@@ -1263,7 +1383,7 @@
                 </p>
               </div>
 
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 shadow-lg">
                 <div class="text-brand-gold text-xl font-bold"><i class="fa-solid fa-hand-holding-dollar"></i></div>
                 <h3 class="font-serif font-bold text-brand-gold text-base">A/R Collection Discipline</h3>
                 <p class="text-xs text-gray-200 leading-relaxed">
@@ -1271,7 +1391,7 @@
                 </p>
               </div>
 
-              <div class="p-5 bg-brand-navy/70 backdrop-blur-md border border-white/15 rounded-xl space-y-2">
+              <div class="p-5 bg-brand-navy/90 backdrop-blur-md border border-white/20 rounded-xl space-y-2 shadow-lg">
                 <div class="text-brand-gold text-xl font-bold"><i class="fa-solid fa-scale-balanced"></i></div>
                 <h3 class="font-serif font-bold text-brand-gold text-base">A/P Timing & Solvency</h3>
                 <p class="text-xs text-gray-200 leading-relaxed">
@@ -1280,8 +1400,8 @@
               </div>
             </div>
 
-            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/20 bg-brand-navy/50 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/10">
-              <span class="text-xs text-gray-300">Need disciplined cash flow management for your operations?</span>
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 bg-brand-navy/90 backdrop-blur-md px-5 py-3 rounded-lg border border-white/20 shadow-md">
+              <span class="text-xs text-gray-200">Need disciplined cash flow management for your operations?</span>
               <button onclick="requestServiceQuote('Cash Management & Reporting')" class="px-5 py-2.5 bg-brand-gold text-brand-navy text-xs font-bold rounded hover:bg-brand-goldHover transition-colors shadow-md">
                 Schedule Cash Flow Review
               </button>
@@ -1814,7 +1934,7 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
-        <!-- Founder Biography Editorial Split -->
+        <!-- Founder Biography Editorial Split (About Page) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div class="lg:col-span-5">
@@ -1822,7 +1942,7 @@
               <!-- Featured Founder & Principal Portrait Box -->
               <div class="rounded-2xl overflow-hidden border-2 border-brand-gold/40 shadow-xl bg-brand-navy relative group">
                 <img 
-                  src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/Screenshot%202026-11-11%20004131.png" 
+                  src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/84ad3951-b97a-467c-a23e-e1b3562656f5.webp" 
                   alt="Felicia Pierre - Founder & Principal" 
                   class="w-full h-96 sm:h-[420px] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                 >
@@ -1836,14 +1956,14 @@
               <div class="grid grid-cols-2 gap-3">
                 <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
                   <img 
-                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469085795_1090186715844831_4958646103603086772_n.jpg" 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/42e70a42-4c7f-47ac-a135-8123a1a71fa2.webp" 
                     alt="Records management workstation" 
                     class="w-full h-28 object-cover"
                   >
                 </div>
                 <div class="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
                   <img 
-                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/469095924_1090186719178164_9014547707585390548_n.jpg" 
+                    src="https://raw.githubusercontent.com/CreativeTugsDotCom/AQ/refs/heads/main/b0aa0ade-22f8-4f49-829c-57de5dd0b9a8.webp" 
                     alt="Orlando office suite entry" 
                     class="w-full h-28 object-cover"
                   >
@@ -2338,15 +2458,19 @@
             <span>Currently configured to the established direct telephone line (203-889-7272) as instructed. If an automated calendar tool (Calendly, Acuity) is preferred, it can be integrated seamlessly.</span>
           </div>
         </div>
-
-        <div class="pt-4 flex justify-end">
-          <button onclick="toggleAuditModal()" class="px-5 py-2 bg-brand-navy text-white text-xs font-semibold rounded hover:bg-brand-slate transition-colors">
-            Close Checklist
-          </button>
-        </div>
       </div>
     </div>
   </div>
+
+  <!-- FLOATING INTERACTIVE BACK-TO-TOP BUTTON -->
+  <button 
+    id="backToTopBtn" 
+    onclick="scrollToTop()" 
+    aria-label="Scroll Back to Top"
+    class="fixed bottom-24 right-5 z-30 w-11 h-11 rounded-full bg-brand-navy/90 hover:bg-brand-navy text-brand-gold border border-brand-gold/40 shadow-xl backdrop-blur-md flex items-center justify-center translate-y-20 opacity-0 pointer-events-none transition-all duration-300 hover:scale-110 focus:outline-none"
+  >
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
 
   <!-- RECURRING 15-SECOND EXECUTIVE CONSULTATION CTA DOCK -->
   <aside id="timedCtaToast" class="fixed bottom-5 right-5 z-40 max-w-sm sm:max-w-md w-[calc(100vw-2.5rem)] translate-y-32 opacity-0 pointer-events-none transition-all duration-500 ease-out shadow-2xl rounded-2xl overflow-hidden border-2 border-brand-gold/50 bg-brand-navy text-white" role="region" aria-label="Consultation Advisory Invitation">
@@ -2497,7 +2621,84 @@
   <!-- SCRIPTING FOR SPA NAVIGATION, FORMS, MODALS, & GALLERY -->
   <script>
     // SPA PAGE NAVIGATION CONTROLLER
+    let activeCurrentPage = 'home';
+
+    function updateHeaderAppearance() {
+      const header = document.getElementById('siteHeader');
+      if (!header) return;
+
+      const isScrolled = window.scrollY > 30;
+
+      if (isScrolled) {
+        header.classList.remove('header-transparent');
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+        header.classList.add('header-transparent');
+      }
+
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+      // Back-to-top button visibility
+      const backToTop = document.getElementById('backToTopBtn');
+      if (backToTop) {
+        if (winScroll > 350) {
+          backToTop.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+          backToTop.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        } else {
+          backToTop.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+          backToTop.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+        }
+      }
+    }
+
+    // Scroll listener for smooth transparent-to-frosted transition
+    window.addEventListener('scroll', updateHeaderAppearance, { passive: true });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ====================================================
+    // SCROLL-TRIGGERED SLIDE-IN ANIMATION CONTROLLER (INTERSECTION OBSERVER)
+    // ====================================================
+    let scrollObserver = null;
+
+    function initScrollAnimations() {
+      const animatedElements = document.querySelectorAll(
+        '.page-section.active .reveal-on-scroll, ' +
+        '.page-section.active .reveal-slide-left, ' +
+        '.page-section.active .reveal-slide-right, ' +
+        '.page-section.active .reveal-scale-in, ' +
+        '#page-whats-new .reveal-on-scroll, #page-practice-areas .reveal-on-scroll, #page-services .reveal-on-scroll, #page-publications .reveal-on-scroll, #page-about .reveal-on-scroll, #page-contact .reveal-on-scroll'
+      );
+
+      if ('IntersectionObserver' in window) {
+        if (scrollObserver) scrollObserver.disconnect();
+
+        scrollObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              // Unobserve after animating in for performance
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        animatedElements.forEach(el => scrollObserver.observe(el));
+      } else {
+        // Fallback for older browsers
+        animatedElements.forEach(el => el.classList.add('revealed'));
+      }
+    }
+
     function navigateTo(pageId) {
+      activeCurrentPage = pageId;
+
       // Hide all page sections
       const pages = document.querySelectorAll('.page-section');
       pages.forEach(p => {
@@ -2514,20 +2715,71 @@
       const navLinks = document.querySelectorAll('.nav-link');
       navLinks.forEach(link => {
         if (link.getAttribute('data-target') === pageId) {
-          link.classList.add('text-brand-navy', 'border-b-2', 'border-brand-gold', 'font-semibold');
-          link.classList.remove('text-gray-700');
+          link.classList.add('text-white', 'border-b-2', 'border-brand-gold', 'font-semibold');
+          link.classList.remove('text-gray-200');
         } else {
-          link.classList.remove('text-brand-navy', 'border-b-2', 'border-brand-gold', 'font-semibold');
-          link.classList.add('text-gray-700');
+          link.classList.remove('text-white', 'border-b-2', 'border-brand-gold', 'font-semibold');
+          link.classList.add('text-gray-200');
         }
       });
 
       // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
+      // Update header transparency state
+      updateHeaderAppearance();
+
+      // Trigger scroll animations for the new active view
+      setTimeout(initScrollAnimations, 100);
+
       // Update browser history hash without reload
       if (history.pushState) {
         history.pushState(null, null, '#' + pageId);
+      }
+    }
+
+    // HERO BACKGROUND VIDEO CONTROLLER (PLAY / PAUSE TOGGLE)
+    let isHeroVideoPlaying = true;
+    function toggleHeroVideoPlayback() {
+      const iframe = document.getElementById('heroYtIframe');
+      const video = document.getElementById('heroBgVideo');
+      const icon = document.getElementById('heroVideoToggleIcon');
+      const text = document.getElementById('heroVideoToggleText');
+
+      if (iframe && iframe.contentWindow) {
+        if (isHeroVideoPlaying) {
+          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          isHeroVideoPlaying = false;
+          if (icon) {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+          }
+          if (text) text.textContent = 'Motion Paused';
+        } else {
+          iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+          isHeroVideoPlaying = true;
+          if (icon) {
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-pause');
+          }
+          if (text) text.textContent = 'Motion On';
+        }
+      } else if (video) {
+        if (video.paused) {
+          video.play();
+          if (icon) {
+            icon.classList.remove('fa-play');
+            icon.classList.add('fa-pause');
+          }
+          if (text) text.textContent = 'Motion On';
+        } else {
+          video.pause();
+          if (icon) {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+          }
+          if (text) text.textContent = 'Motion Paused';
+        }
       }
     }
 
@@ -2633,7 +2885,10 @@
       const hash = window.location.hash.replace('#', '');
       if (hash && ['home', 'whats-new', 'practice-areas', 'services', 'publications', 'about', 'contact'].includes(hash)) {
         navigateTo(hash);
+      } else {
+        updateHeaderAppearance();
       }
+      initScrollAnimations();
     });
 
     // RECURRING 15-SECOND PROFESSIONAL CTA CONTROLLER
